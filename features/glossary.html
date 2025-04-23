@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary - THE MISSING SPHERES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="features.css">
+</head>
+<body>
+    <!-- Floating Spheres -->
+    <div class="floating-spheres-container">
+        <div class="floating-sphere" data-size="small" data-color="water"></div>
+        <div class="floating-sphere" data-size="medium" data-color="fire"></div>
+        <div class="floating-sphere" data-size="large" data-color="spirit"></div>
+        <div class="floating-sphere" data-size="small" data-color="earth"></div>
+        <div class="floating-sphere" data-size="medium" data-color="air"></div>
+        <div class="floating-sphere" data-size="small" data-color="darkness"></div>
+    </div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="sphere-loader"></div>
+            <p>Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">THE MISSING SPHERES</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#story" class="nav-link">Story</a></li>
+                    <li><a href="../index.html#characters" class="nav-link">Characters</a></li>
+                    <li><a href="../index.html#kingdoms" class="nav-link">Kingdoms</a></li>
+                    <li><a href="map.html" class="nav-link">Map</a></li>
+                    <li><a href="quiz.html" class="nav-link">Element Quiz</a></li>
+                    <li><a href="../index.html#radio-spots" class="nav-link">Radio Spots</a></li>
+                    <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="glossary.html" class="nav-link active">Glossary</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Glossary Section -->
+    <section class="glossary-section" id="glossary">
+        <div class="container">
+            <h2 class="section-title reveal">WORLD GLOSSARY</h2>
+            <p class="section-intro reveal">Explore the rich terminology and lore of The Missing Spheres universe. Discover characters, locations, objects, and concepts that shape this epic tale.</p>
+            
+            <div class="glossary-container reveal">
+                <div class="glossary-controls">
+                    <div class="glossary-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="glossary-search-input" placeholder="Search the glossary...">
+                    </div>
+                    <div class="glossary-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="character">Characters</button>
+                        <button class="filter-btn" data-filter="location">Locations</button>
+                        <button class="filter-btn" data-filter="object">Objects</button>
+                        <button class="filter-btn" data-filter="concept">Concepts</button>
+                    </div>
+                </div>
+                
+                <div class="glossary-alphabet">
+                    <div class="alphabet-letter active" data-letter="all">All</div>
+                    <div class="alphabet-letter" data-letter="a">A</div>
+                    <div class="alphabet-letter" data-letter="b">B</div>
+                    <div class="alphabet-letter" data-letter="c">C</div>
+                    <div class="alphabet-letter" data-letter="d">D</div>
+                    <div class="alphabet-letter" data-letter="e">E</div>
+                    <div class="alphabet-letter" data-letter="f">F</div>
+                    <div class="alphabet-letter" data-letter="g">G</div>
+                    <div class="alphabet-letter" data-letter="h">H</div>
+                    <div class="alphabet-letter" data-letter="i">I</div>
+                    <div class="alphabet-letter" data-letter="j">J</div>
+                    <div class="alphabet-letter" data-letter="k">K</div>
+                    <div class="alphabet-letter" data-letter="l">L</div>
+                    <div class="alphabet-letter" data-letter="m">M</div>
+                    <div class="alphabet-letter" data-letter="n">N</div>
+                    <div class="alphabet-letter" data-letter="o">O</div>
+                    <div class="alphabet-letter" data-letter="p">P</div>
+                    <div class="alphabet-letter" data-letter="q">Q</div>
+                    <div class="alphabet-letter" data-letter="r">R</div>
+                    <div class="alphabet-letter" data-letter="s">S</div>
+                    <div class="alphabet-letter" data-letter="t">T</div>
+                    <div class="alphabet-letter" data-letter="u">U</div>
+                    <div class="alphabet-letter" data-letter="v">V</div>
+                    <div class="alphabet-letter" data-letter="w">W</div>
+                    <div class="alphabet-letter" data-letter="x">X</div>
+                    <div class="alphabet-letter" data-letter="y">Y</div>
+                    <div class="alphabet-letter" data-letter="z">Z</div>
+                </div>
+                
+                <div class="glossary-content">
+                    <!-- Characters -->
+                    <div class="glossary-item" data-category="character" data-letter="k">
+                        <div class="glossary-header">
+                            <h3>Kael</h3>
+                            <span class="glossary-category character">Character</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../3.png')"></div>
+                            <p>The protagonist of The Missing Spheres, Kael is a young warrior with the rare ability to connect with all five elemental powers. Born in a small village on the border between Terravale and Zephyria, he discovered his unique abilities when his home was threatened by elemental imbalance.</p>
+                            <p>Kael's journey begins when he receives a vision of the stolen Sphere of Essence and is called to restore balance to the five kingdoms. His greatest strength is his ability to unite people from different backgrounds and see connections that others miss.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="sphere-of-essence">Sphere of Essence</div>
+                                    <div class="related-item" data-related="elemental-balance">Elemental Balance</div>
+                                    <div class="related-item" data-related="riven">Riven</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-item" data-category="character" data-letter="l">
+                        <div class="glossary-header">
+                            <h3>Lyra</h3>
+                            <span class="glossary-category character">Character</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../1.png')"></div>
+                            <p>A fierce water wielder from Aquaris, Lyra has unmatched control over water currents and tides. She is the daughter of a high priestess of the Tidal Temple and was trained from childhood in the ancient water arts.</p>
+                            <p>Lyra joins Kael's quest after her homeland experiences devastating floods caused by the elemental imbalance. She is intuitive, adaptable, and has a deep connection to the emotional currents that flow through all living beings.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="aquaris">Aquaris</div>
+                                    <div class="related-item" data-related="tidal-temple">Tidal Temple</div>
+                                    <div class="related-item" data-related="water-element">Water Element</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-item" data-category="character" data-letter="r">
+                        <div class="glossary-header">
+                            <h3>Riven</h3>
+                            <span class="glossary-category character">Character</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../u1925888568_httpss.mj.run9r1VUqnAmjc_A_dark_atmospheric_tease_d5b855d3-b14f-4472-98c3-ac37584dd22d_3.png')"></div>
+                            <p>Once a revered guardian of the Sphere of Essence, Riven was corrupted by its immense power. Originally from Luminara, he was chosen to protect the Sphere due to his exceptional spiritual connection and balanced nature.</p>
+                            <p>After years of exposure to the Sphere's raw energy, Riven began to believe that the current balance of elements was flawed and that a new order must rise from darkness. He stole the Sphere and now seeks to reshape the world according to his vision.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="sphere-of-essence">Sphere of Essence</div>
+                                    <div class="related-item" data-related="luminara">Luminara</div>
+                                    <div class="related-item" data-related="darkness-element">Darkness Element</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Locations -->
+                    <div class="glossary-item" data-category="location" data-letter="a">
+                        <div class="glossary-header">
+                            <h3>Aquaris</h3>
+                            <span class="glossary-category location">Location</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../3.png')"></div>
+                            <p>The Kingdom of Water, Aquaris is a vast realm of endless oceans, floating cities, and underwater palaces. Its people have adapted to life both above and below the waves, developing unique technologies powered by water currents.</p>
+                            <p>Ruled by the Council of Tides, Aquaris is known for its diplomatic approach to inter-kingdom relations and its deep connection to the emotional currents that flow through all living beings. The capital city, Coralline, is a marvel of architecture that rises from and descends into the sea.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="water-element">Water Element</div>
+                                    <div class="related-item" data-related="coralline">Coralline</div>
+                                    <div class="related-item" data-related="lyra">Lyra</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-item" data-category="location" data-letter="p">
+                        <div class="glossary-header">
+                            <h3>Pyroheim</h3>
+                            <span class="glossary-category location">Location</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../u1925888568_httpss.mj.run9r1VUqnAmjc_A_dark_atmospheric_tease_d5b855d3-b14f-4472-98c3-ac37584dd22d_3.png')"></div>
+                            <p>The Kingdom of Fire, Pyroheim is a land of volcanic mountains, obsidian cities, and eternal flames. Its people harness the power of heat and flame for creation and energy, forging the strongest metals and crafting the most resilient artifacts in the world.</p>
+                            <p>Led by the Ember Sovereign, Pyroheim values passion, strength, and transformation above all else. The capital city, Cinderspire, is built within and around an active volcano, using its energy to power the kingdom's forges and homes.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="fire-element">Fire Element</div>
+                                    <div class="related-item" data-related="cinderspire">Cinderspire</div>
+                                    <div class="related-item" data-related="zayn">Zayn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Objects -->
+                    <div class="glossary-item" data-category="object" data-letter="s">
+                        <div class="glossary-header">
+                            <h3>Sphere of Essence</h3>
+                            <span class="glossary-category object">Object</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../3.png')"></div>
+                            <p>The central artifact of power in The Missing Spheres universe, the Sphere of Essence is an ancient relic that maintains the balance between the five elemental kingdoms. Created at the dawn of time when the elements first separated from primordial chaos, it contains the pure essence of each element in perfect harmony.</p>
+                            <p>Traditionally housed in the Nexus at the heart of Luminara, the Sphere was guarded by chosen protectors from each kingdom. Its theft by Riven has caused catastrophic elemental imbalances throughout the world, triggering natural disasters and weakening the boundaries between kingdoms.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="elemental-balance">Elemental Balance</div>
+                                    <div class="related-item" data-related="nexus">The Nexus</div>
+                                    <div class="related-item" data-related="riven">Riven</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-item" data-category="object" data-letter="e">
+                        <div class="glossary-header">
+                            <h3>Elemental Artifacts</h3>
+                            <span class="glossary-category object">Object</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../1.png')"></div>
+                            <p>Each of the five kingdoms possesses a sacred artifact that embodies the purest form of their elemental power. These artifacts were created from fragments of the original elemental sources and serve as conduits for advanced elemental manipulation.</p>
+                            <p>The five artifacts are: the Tidal Chalice of Aquaris, the Eternal Flame of Pyroheim, the Windweaver's Feather of Zephyria, the Heartstone of Terravale, and the Prism of Unity from Luminara. When brought together, these artifacts can temporarily stabilize elemental imbalances and may be the key to restoring the Sphere of Essence.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="sphere-of-essence">Sphere of Essence</div>
+                                    <div class="related-item" data-related="elemental-balance">Elemental Balance</div>
+                                    <div class="related-item" data-related="five-kingdoms">Five Kingdoms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Concepts -->
+                    <div class="glossary-item" data-category="concept" data-letter="e">
+                        <div class="glossary-header">
+                            <h3>Elemental Balance</h3>
+                            <span class="glossary-category concept">Concept</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../u1925888568_httpss.mj.run9r1VUqnAmjc_A_dark_atmospheric_tease_d5b855d3-b14f-4472-98c3-ac37584dd22d_3.png')"></div>
+                            <p>The fundamental principle that governs the world of The Missing Spheres. Elemental Balance refers to the harmonious coexistence of the five primary elements: Water, Fire, Air, Earth, and Spirit. When in balance, these elements sustain all life and maintain natural order.</p>
+                            <p>The Sphere of Essence is the physical manifestation of this balance. When it was stolen, the elemental forces began to destabilize, causing natural disasters and weakening the boundaries between kingdoms. Restoring balance is the central quest of Kael and his companions.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="sphere-of-essence">Sphere of Essence</div>
+                                    <div class="related-item" data-related="five-elements">Five Elements</div>
+                                    <div class="related-item" data-related="kael">Kael</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-item" data-category="concept" data-letter="f">
+                        <div class="glossary-header">
+                            <h3>Five Elements</h3>
+                            <span class="glossary-category concept">Concept</span>
+                        </div>
+                        <div class="glossary-body">
+                            <div class="glossary-image" style="background-image: url('../3.png')"></div>
+                            <p>The fundamental forces that shape reality in The Missing Spheres universe. The five primary elements are:</p>
+                            <p><strong>Water:</strong> Representing adaptability, emotion, and connection. Associated with Aquaris.</p>
+                            <p><strong>Fire:</strong> Representing passion, transformation, and energy. Associated with Pyroheim.</p>
+                            <p><strong>Air:</strong> Representing freedom, intellect, and movement. Associated with Zephyria.</p>
+                            <p><strong>Earth:</strong> Representing stability, growth, and endurance. Associated with Terravale.</p>
+                            <p><strong>Spirit:</strong> Representing harmony, balance, and unity. Associated with Luminara.</p>
+                            <p>A sixth element, Darkness, is not considered a primary element but rather the absence or corruption of elemental balance. Riven has embraced this force in his quest to reshape the world.</p>
+                            <div class="glossary-related">
+                                <h4>Related Entries</h4>
+                                <div class="related-items">
+                                    <div class="related-item" data-related="elemental-balance">Elemental Balance</div>
+                                    <div class="related-item" data-related="five-kingdoms">Five Kingdoms</div>
+                                    <div class="related-item" data-related="darkness-element">Darkness Element</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div class="glossary-empty" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <p>No entries found matching your search.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="directed-by">DIRECTED BY MATTIA F.M</p>
+                <p class="copyright">&copy; 2025 THE MISSING SPHERES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Glossary Functionality
+            const searchInput = document.getElementById('glossary-search-input');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const alphabetLetters = document.querySelectorAll('.alphabet-letter');
+            const glossaryItems = document.querySelectorAll('.glossary-item');
+            const glossaryHeaders = document.querySelectorAll('.glossary-header');
+            const emptyState = document.querySelector('.glossary-empty');
+            const relatedItems = document.querySelectorAll('.related-item');
+            
+            // Filter by category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter items
+                    filterGlossaryItems();
+                });
+            });
+            
+            // Filter by letter
+            alphabetLetters.forEach(letter => {
+                letter.addEventListener('click', function() {
+                    // Update active letter
+                    alphabetLetters.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter items
+                    filterGlossaryItems();
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                filterGlossaryItems();
+            });
+            
+            // Toggle glossary item details
+            glossaryHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const body = this.nextElementSibling;
+                    const isActive = body.classList.contains('active');
+                    
+                    // Close all open items
+                    document.querySelectorAll('.glossary-body.active').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        body.classList.add('active');
+                    }
+                });
+            });
+            
+            // Related items click
+            relatedItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const relatedId = this.getAttribute('data-related');
+                    
+                    // Find related item
+                    glossaryItems.forEach(glossaryItem => {
+                        const header = glossaryItem.querySelector('.glossary-header h3');
+                        if (header && header.textContent.toLowerCase().replace(/\s+/g, '-') === relatedId) {
+                            // Scroll to item
+                            glossaryItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // Open item
+                            setTimeout(() => {
+                                const body = glossaryItem.querySelector('.glossary-body');
+                                
+                                // Close all open items
+                                document.querySelectorAll('.glossary-body.active').forEach(item => {
+                                    item.classList.remove('active');
+                                });
+                                
+                                // Open related item
+                                body.classList.add('active');
+                            }, 500);
+                        }
+                    });
+                });
+            });
+            
+            // Filter glossary items based on current filters
+            function filterGlossaryItems() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                const activeLetter = document.querySelector('.alphabet-letter.active').getAttribute('data-letter');
+                
+                let visibleCount = 0;
+                
+                glossaryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const letter = item.getAttribute('data-letter');
+                    const title = item.querySelector('.glossary-header h3').textContent.toLowerCase();
+                    const description = item.querySelector('.glossary-body').textContent.toLowerCase();
+                    
+                    // Check if item matches all filters
+                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                    const matchesLetter = activeLetter === 'all' || letter === activeLetter;
+                    const matchesSearch = searchTerm === '' || title.includes(searchTerm) || description.includes(searchTerm);
+                    
+                    // Show/hide item
+                    if (matchesCategory && matchesLetter && matchesSearch) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // Hide preloader
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1000);
+            
+            // Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function checkReveal() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = revealElements[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add('active');
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Check on load
+            
+            // Back to Top Button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

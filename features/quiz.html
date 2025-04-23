@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Quiz - THE MISSING SPHERES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="features.css">
+</head>
+<body>
+    <!-- Floating Spheres -->
+    <div class="floating-spheres-container">
+        <div class="floating-sphere" data-size="small" data-color="water"></div>
+        <div class="floating-sphere" data-size="medium" data-color="fire"></div>
+        <div class="floating-sphere" data-size="large" data-color="spirit"></div>
+        <div class="floating-sphere" data-size="small" data-color="earth"></div>
+        <div class="floating-sphere" data-size="medium" data-color="air"></div>
+        <div class="floating-sphere" data-size="small" data-color="darkness"></div>
+    </div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="sphere-loader"></div>
+            <p>Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">THE MISSING SPHERES</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#story" class="nav-link">Story</a></li>
+                    <li><a href="../index.html#characters" class="nav-link">Characters</a></li>
+                    <li><a href="../index.html#kingdoms" class="nav-link">Kingdoms</a></li>
+                    <li><a href="map.html" class="nav-link">Map</a></li>
+                    <li><a href="quiz.html" class="nav-link active">Element Quiz</a></li>
+                    <li><a href="../index.html#radio-spots" class="nav-link">Radio Spots</a></li>
+                    <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="glossary.html" class="nav-link">Glossary</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Quiz Section -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title reveal">WHICH ELEMENT ARE YOU?</h2>
+            <p class="section-intro reveal">Discover which elemental power resonates with your spirit. Answer the questions below to reveal your true nature and find your place among the five kingdoms.</p>
+            
+            <div class="quiz-container reveal">
+                <!-- Start Screen -->
+                <div id="quiz-start" class="quiz-screen active">
+                    <div class="quiz-start-content">
+                        <div class="element-icons">
+                            <div class="element-icon water"><i class="fas fa-water"></i></div>
+                            <div class="element-icon fire"><i class="fas fa-fire"></i></div>
+                            <div class="element-icon air"><i class="fas fa-wind"></i></div>
+                            <div class="element-icon earth"><i class="fas fa-mountain"></i></div>
+                            <div class="element-icon spirit"><i class="fas fa-sun"></i></div>
+                        </div>
+                        <h3>The Five Elements Await</h3>
+                        <p>In the world of The Missing Spheres, five elemental forces shape reality. Which one flows through your veins?</p>
+                        <button id="start-quiz-btn" class="btn">Begin the Journey</button>
+                    </div>
+                </div>
+                
+                <!-- Questions Screen -->
+                <div id="quiz-questions" class="quiz-screen">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress" id="quiz-progress-bar"></div>
+                        </div>
+                        <div class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">7</span></div>
+                    </div>
+                    
+                    <!-- Question 1 -->
+                    <div class="question" data-question="1">
+                        <h3>When faced with a difficult challenge, you typically:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="0" data-earth="1" data-spirit="1">
+                                <span class="answer-text">Adapt and flow around obstacles, finding the path of least resistance</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="1" data-earth="0" data-spirit="0">
+                                <span class="answer-text">Face it head-on with passion and determination</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Step back to gain perspective and consider all possibilities</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="1" data-air="0" data-earth="2" data-spirit="0">
+                                <span class="answer-text">Remain steady and patient, working methodically toward a solution</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">Seek harmony and balance, considering how all elements of the problem connect</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question" data-question="2">
+                        <h3>Your friends would describe you as:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="1" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Empathetic and intuitive, always in tune with others' emotions</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="0" data-earth="1" data-spirit="0">
+                                <span class="answer-text">Passionate and energetic, the spark that ignites action</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Free-spirited and intellectual, always bringing fresh ideas</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="1" data-air="0" data-earth="2" data-spirit="0">
+                                <span class="answer-text">Reliable and grounded, the rock others lean on</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">Wise and balanced, able to see connections others miss</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question" data-question="3">
+                        <h3>In your ideal home, you would prioritize:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="0" data-earth="1" data-spirit="0">
+                                <span class="answer-text">A waterfront view with flowing, curved architecture</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="0" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Warm colors, open spaces, and a central fireplace</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">High ceilings, lots of windows, and open balconies</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="0" data-air="0" data-earth="2" data-spirit="0">
+                                <span class="answer-text">Natural materials, sturdy construction, and a garden</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">A harmonious blend of all elements, balanced and peaceful</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question" data-question="4">
+                        <h3>When making important decisions, you trust:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="0" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Your emotions and intuition</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="0" data-earth="0" data-spirit="0">
+                                <span class="answer-text">Your passion and instincts</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Your intellect and analysis</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="0" data-earth="2" data-spirit="1">
+                                <span class="answer-text">Your experience and practical wisdom</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">A balance of all these aspects, seeing the whole picture</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question" data-question="5">
+                        <h3>Your greatest strength is:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="1" data-earth="0" data-spirit="0">
+                                <span class="answer-text">Adaptability and emotional intelligence</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="0" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Courage and transformative energy</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Creativity and freedom of thought</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="0" data-earth="2" data-spirit="1">
+                                <span class="answer-text">Reliability and enduring strength</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">Harmony and the ability to unite different perspectives</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 6 -->
+                    <div class="question" data-question="6">
+                        <h3>In a group project, you naturally take on the role of:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="0" data-earth="1" data-spirit="1">
+                                <span class="answer-text">The mediator who ensures everyone's voice is heard</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="1" data-earth="0" data-spirit="0">
+                                <span class="answer-text">The motivator who inspires action and progress</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="1" data-air="2" data-earth="0" data-spirit="0">
+                                <span class="answer-text">The innovator who generates ideas and possibilities</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="0" data-air="0" data-earth="2" data-spirit="0">
+                                <span class="answer-text">The organizer who ensures stability and completion</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">The visionary who sees how all parts connect to the whole</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 7 -->
+                    <div class="question" data-question="7">
+                        <h3>When you're feeling most alive and in your element, you are:</h3>
+                        <div class="answers">
+                            <div class="answer" data-water="2" data-fire="0" data-air="0" data-earth="0" data-spirit="1">
+                                <span class="answer-text">Near water, whether it's the ocean, a lake, or even rain</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="2" data-air="0" data-earth="0" data-spirit="1">
+                                <span class="answer-text">In the midst of action, energy, and excitement</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="2" data-earth="0" data-spirit="1">
+                                <span class="answer-text">In open spaces with fresh air and a sense of freedom</span>
+                            </div>
+                            <div class="answer" data-water="0" data-fire="0" data-air="0" data-earth="2" data-spirit="1">
+                                <span class="answer-text">In nature, connected to the land and its rhythms</span>
+                            </div>
+                            <div class="answer" data-water="1" data-fire="1" data-air="1" data-earth="1" data-spirit="2">
+                                <span class="answer-text">In moments of perfect balance, when everything feels connected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results Screen -->
+                <div id="quiz-results" class="quiz-screen">
+                    <div class="results-content">
+                        <div class="result-header">
+                            <h3>Your Element Is:</h3>
+                            <div class="result-element">
+                                <div id="result-icon"></div>
+                                <div id="result-name"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-description">
+                            <p id="result-text"></p>
+                        </div>
+                        
+                        <div class="result-character">
+                            <h4>Your Character Match:</h4>
+                            <div id="character-match"></div>
+                            <p id="character-description"></p>
+                        </div>
+                        
+                        <div class="result-chart">
+                            <h4>Your Elemental Balance:</h4>
+                            <div class="chart-container">
+                                <div class="chart-bar water">
+                                    <div class="chart-fill"></div>
+                                    <div class="chart-label">Water</div>
+                                </div>
+                                <div class="chart-bar fire">
+                                    <div class="chart-fill"></div>
+                                    <div class="chart-label">Fire</div>
+                                </div>
+                                <div class="chart-bar air">
+                                    <div class="chart-fill"></div>
+                                    <div class="chart-label">Air</div>
+                                </div>
+                                <div class="chart-bar earth">
+                                    <div class="chart-fill"></div>
+                                    <div class="chart-label">Earth</div>
+                                </div>
+                                <div class="chart-bar spirit">
+                                    <div class="chart-fill"></div>
+                                    <div class="chart-label">Spirit</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button id="share-result" class="btn">Share Your Result</button>
+                            <button id="retake-quiz" class="btn btn-secondary">Retake Quiz</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Share Modal -->
+                <div id="share-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Share Your Element</h3>
+                        <p>I discovered my element in The Missing Spheres universe!</p>
+                        <div class="share-image">
+                            <div id="share-result-name"></div>
+                            <div id="share-result-icon"></div>
+                        </div>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                        </div>
+                        <div class="share-link">
+                            <input type="text" id="share-url" readonly>
+                            <button id="copy-link" class="btn-small">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="directed-by">DIRECTED BY MATTIA F.M</p>
+                <p class="copyright">&copy; 2025 THE MISSING SPHERES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quiz Variables
+            const startScreen = document.getElementById('quiz-start');
+            const questionsScreen = document.getElementById('quiz-questions');
+            const resultsScreen = document.getElementById('quiz-results');
+            const startButton = document.getElementById('start-quiz-btn');
+            const questions = document.querySelectorAll('.question');
+            const progressBar = document.getElementById('quiz-progress-bar');
+            const currentQuestionSpan = document.getElementById('current-question');
+            const totalQuestionsSpan = document.getElementById('total-questions');
+            const shareButton = document.getElementById('share-result');
+            const retakeButton = document.getElementById('retake-quiz');
+            const shareModal = document.getElementById('share-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const copyLinkButton = document.getElementById('copy-link');
+            const shareUrlInput = document.getElementById('share-url');
+            
+            // Set total questions
+            totalQuestionsSpan.textContent = questions.length;
+            
+            // Element scores
+            let scores = {
+                water: 0,
+                fire: 0,
+                air: 0,
+                earth: 0,
+                spirit: 0
+            };
+            
+            // Current question index
+            let currentQuestion = 0;
+            
+            // Element descriptions
+            const elementDescriptions = {
+                water: {
+                    name: "WATER",
+                    icon: '<i class="fas fa-water"></i>',
+                    description: "You are adaptable and intuitive, flowing around obstacles with grace. Like water, you have depth that others may not see at first glance. Your emotional intelligence allows you to connect deeply with others, understanding their feelings and motivations. You're at your best when helping others navigate emotional currents and when finding creative solutions to complex problems.",
+                    character: "LYRA",
+                    characterDescription: "Like Lyra, the fierce water wielder, you have an innate understanding of emotional currents and the ability to adapt to changing circumstances. Your strength lies in your depth and intuition."
+                },
+                fire: {
+                    name: "FIRE",
+                    icon: '<i class="fas fa-fire"></i>',
+                    description: "You are passionate and energetic, bringing warmth and transformation wherever you go. Like fire, you inspire others with your enthusiasm and drive. Your determination allows you to overcome obstacles that would stop others in their tracks. You're at your best when taking action, leading others, and transforming situations with your creative energy.",
+                    character: "ZAYN",
+                    characterDescription: "Like Zayn, the charismatic fire dancer, you possess a natural passion and energy that inspires those around you. Your determination and transformative power make you a natural leader."
+                },
+                air: {
+                    name: "AIR",
+                    icon: '<i class="fas fa-wind"></i>',
+                    description: "You are intellectual and free-spirited, bringing fresh perspectives and ideas. Like air, you value freedom and the exchange of thoughts. Your quick mind allows you to see connections and possibilities that others miss. You're at your best when communicating ideas, exploring new concepts, and when you have the freedom to follow your curiosity.",
+                    character: "NAMI",
+                    characterDescription: "Like Nami, the disciplined wind monk, you combine intellectual agility with freedom of thought. Your ability to see the bigger picture and adapt quickly makes you invaluable in any team."
+                },
+                earth: {
+                    name: "EARTH",
+                    icon: '<i class="fas fa-mountain"></i>',
+                    description: "You are reliable and grounded, providing stability and practical wisdom. Like earth, you build foundations that last and nurture growth in others. Your patience and persistence allow you to accomplish goals that require long-term commitment. You're at your best when creating structure, maintaining traditions, and providing support that others can depend on.",
+                    character: "GORRAN",
+                    characterDescription: "Like Gorran, the wise earth guardian, you embody stability and enduring strength. Your practical wisdom and reliability make you the foundation that others build upon."
+                },
+                spirit: {
+                    name: "SPIRIT",
+                    icon: '<i class="fas fa-sun"></i>',
+                    description: "You are balanced and insightful, seeing the connections between all things. Like spirit, you bring harmony and unity to diverse elements. Your wisdom allows you to understand complex situations from multiple perspectives. You're at your best when bringing people together, mediating conflicts, and helping others see the bigger picture of their interconnectedness.",
+                    character: "KAEL",
+                    characterDescription: "Like Kael, the hero with connections to all elements, you naturally see how different forces can work together. Your ability to unite diverse perspectives makes you a natural mediator and visionary."
+                }
+            };
+            
+            // Start Quiz
+            startButton.addEventListener('click', function() {
+                startScreen.classList.remove('active');
+                questionsScreen.classList.add('active');
+                showQuestion(0);
+            });
+            
+            // Show a specific question
+            function showQuestion(index) {
+                // Hide all questions
+                questions.forEach(q => q.style.display = 'none');
+                
+                // Show current question
+                questions[index].style.display = 'block';
+                
+                // Update progress
+                currentQuestionSpan.textContent = index + 1;
+                progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+            }
+            
+            // Handle answer selection
+            document.querySelectorAll('.answer').forEach(answer => {
+                answer.addEventListener('click', function() {
+                    // Add selected class
+                    const currentAnswers = this.closest('.answers').querySelectorAll('.answer');
+                    currentAnswers.forEach(a => a.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Update scores
+                    scores.water += parseInt(this.getAttribute('data-water') || 0);
+                    scores.fire += parseInt(this.getAttribute('data-fire') || 0);
+                    scores.air += parseInt(this.getAttribute('data-air') || 0);
+                    scores.earth += parseInt(this.getAttribute('data-earth') || 0);
+                    scores.spirit += parseInt(this.getAttribute('data-spirit') || 0);
+                    
+                    // Move to next question or show results
+                    currentQuestion++;
+                    
+                    if (currentQuestion < questions.length) {
+                        showQuestion(currentQuestion);
+                    } else {
+                        showResults();
+                    }
+                });
+            });
+            
+            // Show quiz results
+            function showResults() {
+                // Hide questions screen
+                questionsScreen.classList.remove('active');
+                
+                // Determine dominant element
+                let dominantElement = 'water';
+                let maxScore = scores.water;
+                
+                for (const element in scores) {
+                    if (scores[element] > maxScore) {
+                        maxScore = scores[element];
+                        dominantElement = element;
+                    }
+                }
+                
+                // Set result content
+                document.getElementById('result-icon').innerHTML = elementDescriptions[dominantElement].icon;
+                document.getElementById('result-name').textContent = elementDescriptions[dominantElement].name;
+                document.getElementById('result-text').textContent = elementDescriptions[dominantElement].description;
+                document.getElementById('character-match').textContent = elementDescriptions[dominantElement].character;
+                document.getElementById('character-description').textContent = elementDescriptions[dominantElement].characterDescription;
+                
+                // Set share content
+                document.getElementById('share-result-icon').innerHTML = elementDescriptions[dominantElement].icon;
+                document.getElementById('share-result-name').textContent = elementDescriptions[dominantElement].name;
+                
+                // Set chart values
+                const totalScore = scores.water + scores.fire + scores.air + scores.earth + scores.spirit;
+                document.querySelector('.chart-bar.water .chart-fill').style.height = `${(scores.water / totalScore) * 100}%`;
+                document.querySelector('.chart-bar.fire .chart-fill').style.height = `${(scores.fire / totalScore) * 100}%`;
+                document.querySelector('.chart-bar.air .chart-fill').style.height = `${(scores.air / totalScore) * 100}%`;
+                document.querySelector('.chart-bar.earth .chart-fill').style.height = `${(scores.earth / totalScore) * 100}%`;
+                document.querySelector('.chart-bar.spirit .chart-fill').style.height = `${(scores.spirit / totalScore) * 100}%`;
+                
+                // Show results screen
+                resultsScreen.classList.add('active');
+                
+                // Set share URL
+                shareUrlInput.value = `${window.location.origin}${window.location.pathname}?element=${dominantElement}`;
+            }
+            
+            // Share result
+            shareButton.addEventListener('click', function() {
+                shareModal.classList.add('active');
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                shareModal.classList.remove('active');
+            });
+            
+            // Click outside modal to close
+            window.addEventListener('click', function(e) {
+                if (e.target === shareModal) {
+                    shareModal.classList.remove('active');
+                }
+            });
+            
+            // Copy share link
+            copyLinkButton.addEventListener('click', function() {
+                shareUrlInput.select();
+                document.execCommand('copy');
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = 'Copy';
+                }, 2000);
+            });
+            
+            // Retake quiz
+            retakeButton.addEventListener('click', function() {
+                // Reset scores
+                scores = {
+                    water: 0,
+                    fire: 0,
+                    air: 0,
+                    earth: 0,
+                    spirit: 0
+                };
+                
+                // Reset current question
+                currentQuestion = 0;
+                
+                // Reset selected answers
+                document.querySelectorAll('.answer').forEach(a => a.classList.remove('selected'));
+                
+                // Hide results screen
+                resultsScreen.classList.remove('active');
+                
+                // Show start screen
+                startScreen.classList.add('active');
+            });
+            
+            // Check for result in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const elementParam = urlParams.get('element');
+            
+            if (elementParam && elementDescriptions[elementParam]) {
+                // Set dominant element from URL
+                const dominantElement = elementParam;
+                
+                // Skip to results
+                startScreen.classList.remove('active');
+                
+                // Set result content
+                document.getElementById('result-icon').innerHTML = elementDescriptions[dominantElement].icon;
+                document.getElementById('result-name').textContent = elementDescriptions[dominantElement].name;
+                document.getElementById('result-text').textContent = elementDescriptions[dominantElement].description;
+                document.getElementById('character-match').textContent = elementDescriptions[dominantElement].character;
+                document.getElementById('character-description').textContent = elementDescriptions[dominantElement].characterDescription;
+                
+                // Set share content
+                document.getElementById('share-result-icon').innerHTML = elementDescriptions[dominantElement].icon;
+                document.getElementById('share-result-name').textContent = elementDescriptions[dominantElement].name;
+                
+                // Show results screen
+                resultsScreen.classList.add('active');
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // Hide preloader
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1000);
+            
+            // Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function checkReveal() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = revealElements[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add('active');
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Check on load
+        });
+    </script>

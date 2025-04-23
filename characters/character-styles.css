@@ -1,0 +1,973 @@
+/* Character Profile Page Styles */
+
+/* Base Styles */
+.character-page {
+    background-color: #050505;
+    overflow-x: hidden;
+}
+
+.character-page[data-character="all"] {
+    background: linear-gradient(to bottom, #0a0a0a, #1a1505);
+}
+
+.character-page[data-character="water"] {
+    background: linear-gradient(to bottom, #0a0a0a, #051520);
+}
+
+.character-page[data-character="fire"] {
+    background: linear-gradient(to bottom, #0a0a0a, #200505);
+}
+
+.character-page[data-character="air"] {
+    background: linear-gradient(to bottom, #0a0a0a, #101520);
+}
+
+.character-page[data-character="earth"] {
+    background: linear-gradient(to bottom, #0a0a0a, #051505);
+}
+
+.character-page[data-character="darkness"] {
+    background: linear-gradient(to bottom, #0a0a0a, #150515);
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(224, 168, 13, 0.1);
+    color: #e0a80d;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(224, 168, 13, 0.2);
+    margin-bottom: 30px;
+}
+
+.back-btn:hover {
+    background: rgba(224, 168, 13, 0.2);
+    transform: translateX(-5px);
+}
+
+.character-page[data-character="water"] .back-btn {
+    background: rgba(0, 174, 239, 0.1);
+    color: #00aeef;
+    border: 1px solid rgba(0, 174, 239, 0.2);
+}
+
+.character-page[data-character="water"] .back-btn:hover {
+    background: rgba(0, 174, 239, 0.2);
+}
+
+.character-page[data-character="fire"] .back-btn {
+    background: rgba(255, 107, 8, 0.1);
+    color: #ff6b08;
+    border: 1px solid rgba(255, 107, 8, 0.2);
+}
+
+.character-page[data-character="fire"] .back-btn:hover {
+    background: rgba(255, 107, 8, 0.2);
+}
+
+.character-page[data-character="air"] .back-btn {
+    background: rgba(173, 216, 230, 0.1);
+    color: #add8e6;
+    border: 1px solid rgba(173, 216, 230, 0.2);
+}
+
+.character-page[data-character="air"] .back-btn:hover {
+    background: rgba(173, 216, 230, 0.2);
+}
+
+.character-page[data-character="earth"] .back-btn {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.character-page[data-character="earth"] .back-btn:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.character-page[data-character="darkness"] .back-btn {
+    background: rgba(156, 39, 176, 0.1);
+    color: #9c27b0;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+}
+
+.character-page[data-character="darkness"] .back-btn:hover {
+    background: rgba(156, 39, 176, 0.2);
+}
+
+/* Character Header */
+.character-header {
+    padding: 60px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+.character-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../3.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.character-name {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(224, 168, 13, 0.5);
+}
+
+.character-page[data-character="water"] .character-name {
+    text-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
+}
+
+.character-page[data-character="fire"] .character-name {
+    text-shadow: 0 0 10px rgba(255, 107, 8, 0.5);
+}
+
+.character-page[data-character="air"] .character-name {
+    text-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+}
+
+.character-page[data-character="earth"] .character-name {
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.character-page[data-character="darkness"] .character-name {
+    text-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+}
+
+.character-title {
+    font-size: 1.5rem;
+    color: #e0a80d;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.character-page[data-character="water"] .character-title {
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .character-title {
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .character-title {
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .character-title {
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-title {
+    color: #9c27b0;
+}
+
+/* Character Profile Section */
+.character-profile {
+    padding: 60px 0;
+}
+
+.character-card {
+    display: flex;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.character-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.character-image {
+    flex: 0 0 40%;
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Increased height to show full image */
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background for better contrast */
+}
+
+.character-portrait {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.character-portrait[data-element="all"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_27_57\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait[data-element="water"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_27_59\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait[data-element="fire"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_14\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait[data-element="air"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_18\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait[data-element="earth"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_20\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait[data-element="darkness"] {
+    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_25\ PM.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.character-portrait::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 70%, rgba(224, 168, 13, 0.2));
+    pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
+    z-index: 1;
+}
+
+.character-portrait[data-element="water"]::before {
+    background: linear-gradient(to right, transparent 70%, rgba(0, 174, 239, 0.2));
+}
+
+.character-portrait[data-element="fire"]::before {
+    background: linear-gradient(to right, transparent 70%, rgba(255, 107, 8, 0.2));
+}
+
+.character-portrait[data-element="air"]::before {
+    background: linear-gradient(to right, transparent 70%, rgba(173, 216, 230, 0.2));
+}
+
+.character-portrait[data-element="earth"]::before {
+    background: linear-gradient(to right, transparent 70%, rgba(76, 175, 80, 0.2));
+}
+
+.character-portrait[data-element="darkness"]::before {
+    background: linear-gradient(to right, transparent 70%, rgba(156, 39, 176, 0.2));
+}
+
+.character-details {
+    flex: 0 0 60%;
+    padding: 40px;
+}
+
+.character-role {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(224, 168, 13, 0.2);
+    color: #e0a80d;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.character-page[data-character="water"] .character-role {
+    background: rgba(0, 174, 239, 0.2);
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .character-role {
+    background: rgba(255, 107, 8, 0.2);
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .character-role {
+    background: rgba(173, 216, 230, 0.2);
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .character-role {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-role {
+    background: rgba(156, 39, 176, 0.2);
+    color: #9c27b0;
+}
+
+.character-element-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.character-description {
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.character-description p {
+    margin-bottom: 15px;
+}
+
+.character-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #e0a80d;
+    padding-left: 20px;
+    border-left: 3px solid #e0a80d;
+}
+
+.character-page[data-character="water"] .character-quote {
+    color: #00aeef;
+    border-left: 3px solid #00aeef;
+}
+
+.character-page[data-character="fire"] .character-quote {
+    color: #ff6b08;
+    border-left: 3px solid #ff6b08;
+}
+
+.character-page[data-character="air"] .character-quote {
+    color: #add8e6;
+    border-left: 3px solid #add8e6;
+}
+
+.character-page[data-character="earth"] .character-quote {
+    color: #4caf50;
+    border-left: 3px solid #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-quote {
+    color: #9c27b0;
+    border-left: 3px solid #9c27b0;
+}
+
+/* Character Abilities Section */
+.character-abilities {
+    padding: 80px 0;
+    background-color: rgba(10, 10, 10, 0.7);
+    position: relative;
+}
+
+.character-abilities::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../3.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.character-abilities h2 {
+    color: #e0a80d;
+}
+
+.character-page[data-character="water"] .character-abilities h2 {
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .character-abilities h2 {
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .character-abilities h2 {
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .character-abilities h2 {
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-abilities h2 {
+    color: #9c27b0;
+}
+
+.character-page[data-character="water"] .character-abilities h2::after {
+    background: linear-gradient(90deg, transparent, #00aeef, transparent);
+}
+
+.character-page[data-character="fire"] .character-abilities h2::after {
+    background: linear-gradient(90deg, transparent, #ff6b08, transparent);
+}
+
+.character-page[data-character="air"] .character-abilities h2::after {
+    background: linear-gradient(90deg, transparent, #add8e6, transparent);
+}
+
+.character-page[data-character="earth"] .character-abilities h2::after {
+    background: linear-gradient(90deg, transparent, #4caf50, transparent);
+}
+
+.character-page[data-character="darkness"] .character-abilities h2::after {
+    background: linear-gradient(90deg, transparent, #9c27b0, transparent);
+}
+
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.ability {
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.ability.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ability:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ability-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(224, 168, 13, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(224, 168, 13, 0.3);
+}
+
+.ability-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../3.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.5);
+}
+
+.ability-icon[data-element="water"] {
+    background: rgba(0, 174, 239, 0.2);
+    border: 2px solid rgba(0, 174, 239, 0.3);
+}
+
+.ability-icon[data-element="water"]::before {
+    filter: hue-rotate(180deg);
+}
+
+.ability-icon[data-element="fire"] {
+    background: rgba(255, 107, 8, 0.2);
+    border: 2px solid rgba(255, 107, 8, 0.3);
+}
+
+.ability-icon[data-element="fire"]::before {
+    filter: hue-rotate(0deg) saturate(2);
+}
+
+.ability-icon[data-element="air"] {
+    background: rgba(173, 216, 230, 0.2);
+    border: 2px solid rgba(173, 216, 230, 0.3);
+}
+
+.ability-icon[data-element="air"]::before {
+    filter: hue-rotate(200deg) brightness(1.5);
+}
+
+.ability-icon[data-element="earth"] {
+    background: rgba(76, 175, 80, 0.2);
+    border: 2px solid rgba(76, 175, 80, 0.3);
+}
+
+.ability-icon[data-element="earth"]::before {
+    filter: hue-rotate(90deg);
+}
+
+.ability-icon[data-element="spirit"] {
+    background: rgba(224, 168, 13, 0.2);
+    border: 2px solid rgba(224, 168, 13, 0.3);
+}
+
+.ability-icon.special {
+    background: linear-gradient(45deg, 
+        rgba(0, 174, 239, 0.3), 
+        rgba(255, 107, 8, 0.3), 
+        rgba(173, 216, 230, 0.3), 
+        rgba(76, 175, 80, 0.3), 
+        rgba(224, 168, 13, 0.3));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.ability-icon.special::before {
+    filter: none;
+    opacity: 0.2;
+}
+
+.ability h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.ability p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Character Journey Section */
+.character-journey {
+    padding: 80px 0;
+    position: relative;
+}
+
+.character-journey h2 {
+    color: #e0a80d;
+}
+
+.character-page[data-character="water"] .character-journey h2 {
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .character-journey h2 {
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .character-journey h2 {
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .character-journey h2 {
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-journey h2 {
+    color: #9c27b0;
+}
+
+.character-page[data-character="water"] .character-journey h2::after {
+    background: linear-gradient(90deg, transparent, #00aeef, transparent);
+}
+
+.character-page[data-character="fire"] .character-journey h2::after {
+    background: linear-gradient(90deg, transparent, #ff6b08, transparent);
+}
+
+.character-page[data-character="air"] .character-journey h2::after {
+    background: linear-gradient(90deg, transparent, #add8e6, transparent);
+}
+
+.character-page[data-character="earth"] .character-journey h2::after {
+    background: linear-gradient(90deg, transparent, #4caf50, transparent);
+}
+
+.character-page[data-character="darkness"] .character-journey h2::after {
+    background: linear-gradient(90deg, transparent, #9c27b0, transparent);
+}
+
+.journey-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(224, 168, 13, 0.3);
+}
+
+.character-page[data-character="water"] .journey-timeline::before {
+    background: rgba(0, 174, 239, 0.3);
+}
+
+.character-page[data-character="fire"] .journey-timeline::before {
+    background: rgba(255, 107, 8, 0.3);
+}
+
+.character-page[data-character="air"] .journey-timeline::before {
+    background: rgba(173, 216, 230, 0.3);
+}
+
+.character-page[data-character="earth"] .journey-timeline::before {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+.character-page[data-character="darkness"] .journey-timeline::before {
+    background: rgba(156, 39, 176, 0.3);
+}
+
+.journey-event {
+    position: relative;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.journey-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.journey-event:nth-child(odd) {
+    padding-right: 50%;
+    text-align: right;
+}
+
+.journey-event:nth-child(even) {
+    padding-left: 50%;
+    text-align: left;
+}
+
+.event-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e0a80d;
+    box-shadow: 0 0 10px rgba(224, 168, 13, 0.5);
+}
+
+.character-page[data-character="water"] .event-marker {
+    background: #00aeef;
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
+}
+
+.character-page[data-character="fire"] .event-marker {
+    background: #ff6b08;
+    box-shadow: 0 0 10px rgba(255, 107, 8, 0.5);
+}
+
+.character-page[data-character="air"] .event-marker {
+    background: #add8e6;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+}
+
+.character-page[data-character="earth"] .event-marker {
+    background: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.character-page[data-character="darkness"] .event-marker {
+    background: #9c27b0;
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+}
+
+.event-content {
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.journey-event:nth-child(odd) .event-content::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(20, 20, 20, 0.7);
+}
+
+.journey-event:nth-child(even) .event-content::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid rgba(20, 20, 20, 0.7);
+}
+
+.event-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #e0a80d;
+}
+
+.character-page[data-character="water"] .event-content h3 {
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .event-content h3 {
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .event-content h3 {
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .event-content h3 {
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .event-content h3 {
+    color: #9c27b0;
+}
+
+/* Character Relationships Section */
+.character-relationships {
+    padding: 80px 0;
+    background-color: rgba(10, 10, 10, 0.7);
+    position: relative;
+}
+
+.character-relationships::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../3.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.character-relationships h2 {
+    color: #e0a80d;
+}
+
+.character-page[data-character="water"] .character-relationships h2 {
+    color: #00aeef;
+}
+
+.character-page[data-character="fire"] .character-relationships h2 {
+    color: #ff6b08;
+}
+
+.character-page[data-character="air"] .character-relationships h2 {
+    color: #add8e6;
+}
+
+.character-page[data-character="earth"] .character-relationships h2 {
+    color: #4caf50;
+}
+
+.character-page[data-character="darkness"] .character-relationships h2 {
+    color: #9c27b0;
+}
+
+.character-page[data-character="water"] .character-relationships h2::after {
+    background: linear-gradient(90deg, transparent, #00aeef, transparent);
+}
+
+.character-page[data-character="fire"] .character-relationships h2::after {
+    background: linear-gradient(90deg, transparent, #ff6b08, transparent);
+}
+
+.character-page[data-character="air"] .character-relationships h2::after {
+    background: linear-gradient(90deg, transparent, #add8e6, transparent);
+}
+
+.character-page[data-character="earth"] .character-relationships h2::after {
+    background: linear-gradient(90deg, transparent, #4caf50, transparent);
+}
+
+.character-page[data-character="darkness"] .character-relationships h2::after {
+    background: linear-gradient(90deg, transparent, #9c27b0, transparent);
+}
+
+.relationships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.relationship-card {
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    padding: 25px;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    border-left: 5px solid #e0a80d;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.relationship-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.relationship-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.relationship-card[data-element="water"] {
+    border-left: 5px solid #00aeef;
+}
+
+.relationship-card[data-element="fire"] {
+    border-left: 5px solid #ff6b08;
+}
+
+.relationship-card[data-element="air"] {
+    border-left: 5px solid #add8e6;
+}
+
+.relationship-card[data-element="earth"] {
+    border-left: 5px solid #4caf50;
+}
+
+.relationship-card[data-element="darkness"] {
+    border-left: 5px solid #9c27b0;
+}
+
+.relationship-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.relationship-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #050505;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .character-card {
+        flex-direction: column;
+    }
+    
+    .character-image {
+        height: 300px;
+    }
+    
+    .journey-event:nth-child(odd),
+    .journey-event:nth-child(even) {
+        padding: 0 0 0 30px;
+        text-align: left;
+    }
+    
+    .journey-timeline::before {
+        left: 0;
+        transform: none;
+    }
+    
+    .event-marker {
+        left: 0;
+        transform: none;
+    }
+    
+    .journey-event:nth-child(odd) .event-content::after,
+    .journey-event:nth-child(even) .event-content::after {
+        left: -10px;
+        right: auto;
+        border-right: 10px solid rgba(20, 20, 20, 0.7);
+        border-left: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .character-name {
+        font-size: 3rem;
+    }
+    
+    .character-title {
+        font-size: 1.2rem;
+    }
+    
+    .character-details {
+        padding: 25px;
+    }
+    
+    .ability {
+        padding: 20px;
+    }
+}

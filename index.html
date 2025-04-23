@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MISSING SPHERES | Official Movie Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating Spheres -->
+    <div class="floating-spheres-container">
+        <div class="floating-sphere" data-size="small" data-color="water"></div>
+        <div class="floating-sphere" data-size="medium" data-color="fire"></div>
+        <div class="floating-sphere" data-size="large" data-color="spirit"></div>
+        <div class="floating-sphere" data-size="small" data-color="earth"></div>
+        <div class="floating-sphere" data-size="medium" data-color="air"></div>
+        <div class="floating-sphere" data-size="small" data-color="darkness"></div>
+    </div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="sphere-loader"></div>
+            <p>Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">THE MISSING SPHERES</div>
+                <ul class="nav-links">
+                    <li><a href="#story" class="nav-link">Story</a></li>
+                    <li><a href="#characters" class="nav-link">Characters</a></li>
+                    <li><a href="#kingdoms" class="nav-link">Kingdoms</a></li>
+                    <li><a href="features/map.html" class="nav-link">Map</a></li>
+                    <li><a href="features/quiz.html" class="nav-link">Element Quiz</a></li>
+                    <li><a href="#radio-spots" class="nav-link">Radio Spots</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="social-reactions.html" class="nav-link">Fan Reactions</a></li>
+                    <li><a href="#credits-sponsors" class="nav-link">Credits</a></li>
+                    <li><a href="features/glossary.html" class="nav-link">Glossary</a></li>
+                    <li><a href="features/faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg" style="background-image: url('3.png')"></div>
+        <div class="hero-content">
+            <h1 class="main-title">THE MISSING SPHERES</h1>
+            <p class="tagline">Balance is shattered. Hope remains.</p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn pulse" id="trailer-btn">WATCH TRAILER</a>
+                <a href="#story" class="btn btn-secondary">DISCOVER</a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <p>Scroll to Continue</p>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section class="synopsis" id="story">
+        <div class="container">
+            <h2 class="section-title reveal">THE STORY</h2>
+            <div class="synopsis-content">
+                <p class="reveal">In a world divided into five elemental kingdoms, balance is shattered when the Sphere of Essence, the source of harmony, is stolen by Riven, a fallen guardian consumed by darkness. As chaos spreads—seas rise, lands fracture, and storms rage—hope lies in Kael, a young warrior with a rare connection to all five elements.</p>
+                <p class="reveal">Joined by a group of gifted allies—Lyra, a fierce water wielder; Zayn, a fire dancer; Nami, a wind monk; and Gorran, a wise earth guardian—Kael embarks on a perilous journey to retrieve the lost Sphere and restore balance before the world is consumed by destruction.</p>
+                <p class="reveal">But as their quest unfolds, Kael must confront a deeper truth: the power to unite the elements comes with a cost—one that may change the fate of their world forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="characters" id="characters">
+        <div class="container">
+            <h2 class="section-title reveal">THE HEROES</h2>
+            <div class="character-grid">
+                <div class="character reveal" data-element="all">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_57 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>KAEL</h3>
+                        <p class="character-element">All Elements</p>
+                        <p>A young warrior with the rare ability to connect with all five elements, destined to restore balance to the world.</p>
+                        <a href="characters/kael.html" class="character-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="character reveal" data-element="water">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_59 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>LYRA</h3>
+                        <p class="character-element">Water</p>
+                        <p>A fierce water wielder with unmatched control over the seas and a mysterious past tied to the ancient guardians.</p>
+                        <a href="characters/lyra.html" class="character-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="character reveal" data-element="fire">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_14 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>ZAYN</h3>
+                        <p class="character-element">Fire</p>
+                        <p>A charismatic fire dancer whose flames burn with the intensity of his determination to protect his homeland.</p>
+                        <a href="characters/zayn.html" class="character-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="character reveal" data-element="air">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_18 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>NAMI</h3>
+                        <p class="character-element">Wind</p>
+                        <p>A disciplined wind monk who moves with the grace of a breeze and strikes with the force of a hurricane.</p>
+                        <a href="characters/nami.html" class="character-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="character reveal" data-element="earth">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_20 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>GORRAN</h3>
+                        <p class="character-element">Earth</p>
+                        <p>A wise earth guardian whose ancient knowledge and steadfast resolve ground the team in their darkest moments.</p>
+                        <a href="characters/gorran.html" class="character-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="villain-title reveal">THE ANTAGONIST</h2>
+            <div class="villain-container">
+                <div class="character villain reveal" data-element="darkness">
+                    <div class="character-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_25 PM.png')"></div>
+                    <div class="character-info">
+                        <h3>RIVEN</h3>
+                        <p class="character-element">Darkness</p>
+                        <p>Once a revered protector of the Sphere of Essence, now corrupted by its immense power, seeking to reshape the world.</p>
+                        <a href="characters/riven.html" class="character-btn villain-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kingdoms Section -->
+    <section class="elements" id="kingdoms">
+        <div class="container">
+            <h2 class="section-title reveal">THE FIVE KINGDOMS</h2>
+            <div class="elements-grid">
+                <div class="element-card water reveal">
+                    <div class="element-icon"></div>
+                    <h3>AQUARIS</h3>
+                    <p>Kingdom of Water</p>
+                    <div class="element-overlay">
+                        <p>A realm of vast oceans and floating cities, where the people have adapted to life both above and below the waves.</p>
+                    </div>
+                </div>
+                <div class="element-card fire reveal">
+                    <div class="element-icon"></div>
+                    <h3>PYROHEIM</h3>
+                    <p>Kingdom of Fire</p>
+                    <div class="element-overlay">
+                        <p>A land of volcanic mountains and eternal flames, where the inhabitants harness heat for creation and power.</p>
+                    </div>
+                </div>
+                <div class="element-card air reveal">
+                    <div class="element-icon"></div>
+                    <h3>ZEPHYRIA</h3>
+                    <p>Kingdom of Wind</p>
+                    <div class="element-overlay">
+                        <p>A domain of floating islands and cloud cities, where the people have mastered the art of flight and weather manipulation.</p>
+                    </div>
+                </div>
+                <div class="element-card earth reveal">
+                    <div class="element-icon"></div>
+                    <h3>TERRAVALE</h3>
+                    <p>Kingdom of Earth</p>
+                    <div class="element-overlay">
+                        <p>A territory of lush forests and crystal caves, where the inhabitants live in harmony with the land and its creatures.</p>
+                    </div>
+                </div>
+                <div class="element-card spirit reveal">
+                    <div class="element-icon"></div>
+                    <h3>LUMINARA</h3>
+                    <p>Kingdom of Spirit</p>
+                    <div class="element-overlay">
+                        <p>A mystical realm where the physical and spiritual worlds intersect, home to the keepers of ancient wisdom and cosmic energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radio Spots Section -->
+    <section class="radio-spots" id="radio-spots">
+        <div class="container">
+            <h2 class="section-title reveal">RADIO SPOTS</h2>
+            <p class="section-intro reveal">Experience the world of The Missing Spheres through immersive audio teasers. Click on each spot to listen.</p>
+            
+            <div class="radio-spots-grid">
+                <!-- Radio Spot 1 -->
+                <div class="radio-spot reveal" data-spot="spot1">
+                    <div class="radio-spot-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_57 PM.png')"></div>
+                    <div class="radio-spot-info">
+                        <h3>THE CALLING</h3>
+                        <p>The journey begins with a mysterious call that echoes across the five kingdoms.</p>
+                        <button class="radio-spot-btn">
+                            <i class="fas fa-play"></i> Play Teaser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Radio Spot 2 -->
+                <div class="radio-spot reveal" data-spot="spot2">
+                    <div class="radio-spot-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_59 PM.png')"></div>
+                    <div class="radio-spot-info">
+                        <h3>ELEMENTS UNITE</h3>
+                        <p>Witness the moment when the heroes combine their elemental powers to face darkness.</p>
+                        <button class="radio-spot-btn">
+                            <i class="fas fa-play"></i> Play Teaser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Radio Spot 3 -->
+                <div class="radio-spot reveal" data-spot="spot3">
+                    <div class="radio-spot-image" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_25 PM.png')"></div>
+                    <div class="radio-spot-info">
+                        <h3>THE FINAL CONFRONTATION</h3>
+                        <p>The climactic battle between Kael's team and Riven for the fate of the Sphere of Essence.</p>
+                        <button class="radio-spot-btn">
+                            <i class="fas fa-play"></i> Play Teaser
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">GALLERY</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_57 PM.png')"></div>
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_27_59 PM.png')"></div>
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_14 PM.png')"></div>
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_18 PM.png')"></div>
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_20 PM.png')"></div>
+                <div class="gallery-item reveal" style="background-image: url('FOTO PERSONAGGI/ChatGPT Image Apr 15, 2025, 11_29_25 PM.png')"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Highlight Section -->
+    <section class="features-highlight" id="features">
+        <div class="container">
+            <h2 class="section-title reveal">EXPLORE THE UNIVERSE</h2>
+            <p class="section-intro reveal">Dive deeper into the world of The Missing Spheres with these interactive features.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-map"></i></div>
+                    <h3>INTERACTIVE MAP</h3>
+                    <p>Explore the five elemental kingdoms in detail with our interactive map. Discover the unique landscapes, capitals, and guardians of each realm.</p>
+                    <a href="features/map.html" class="feature-btn">Explore Map</a>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
+                    <h3>ELEMENT QUIZ</h3>
+                    <p>Which elemental power flows through your veins? Take our quiz to discover which of the five elements you're most aligned with.</p>
+                    <a href="features/quiz.html" class="feature-btn">Take Quiz</a>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3>WORLD GLOSSARY</h3>
+                    <p>Delve into the rich terminology and lore of The Missing Spheres universe. Learn about characters, locations, artifacts, and concepts.</p>
+                    <a href="features/glossary.html" class="feature-btn">Read Glossary</a>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                    <h3>FAN REACTIONS</h3>
+                    <p>See what fans are saying about The Missing Spheres across social media platforms. Discover reactions to characters, plot twists, and visual effects.</p>
+                    <a href="social-reactions.html" class="feature-btn">View Reactions</a>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-info-circle"></i></div>
+                    <h3>FAQ</h3>
+                    <p>Find answers to common questions about The Missing Spheres movie and the world of cinema. Everything you need to know in one place.</p>
+                    <a href="features/faq.html" class="feature-btn">View FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Credits & Sponsors Section -->
+    <section class="credits-sponsors" id="credits-sponsors">
+        <div class="container">
+            <h2 class="section-title reveal">CREDITS & SPONSORS</h2>
+            <p class="section-intro reveal">The talented individuals and organizations that brought The Missing Spheres to life.</p>
+            
+            <div class="credits-sponsors-grid">
+                <!-- Credits Column -->
+                <div class="credits-column reveal">
+                    <h3>CREDITS</h3>
+                    <div class="credits-list">
+                        <div class="credit-item">
+                            <span class="credit-role">Director</span>
+                            <span class="credit-name">Mattia F.M</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Producer</span>
+                            <span class="credit-name">Alessandro Rossi</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Screenplay</span>
+                            <span class="credit-name">Sofia Bianchi</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Cinematography</span>
+                            <span class="credit-name">Marco Esposito</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Music Composer</span>
+                            <span class="credit-name">Luca Romano</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Production Design</span>
+                            <span class="credit-name">Giulia Marino</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Costume Design</span>
+                            <span class="credit-name">Francesca Ricci</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Visual Effects</span>
+                            <span class="credit-name">Davide Conti</span>
+                        </div>
+                        <div class="credit-item">
+                            <span class="credit-role">Editing</span>
+                            <span class="credit-name">Elena Ferrara</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sponsors Column -->
+                <div class="sponsors-column reveal">
+                    <h3>SPONSORS</h3>
+                    <div class="sponsors-grid">
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <p class="sponsor-name">CinemaItalia</p>
+                        </div>
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <p class="sponsor-name">MediaVision</p>
+                        </div>
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <p class="sponsor-name">StudioLux</p>
+                        </div>
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <p class="sponsor-name">AudioPro</p>
+                        </div>
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <p class="sponsor-name">VisualArts</p>
+                        </div>
+                        <div class="sponsor-item">
+                            <div class="sponsor-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <p class="sponsor-name">FilmFund</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="directed-by">DIRECTED BY MATTIA F.M</p>
+                <p class="copyright">&copy; 2025 THE MISSING SPHERES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Trailer Modal -->
+    <div class="modal" id="trailer-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Official Trailer</h2>
+            <div class="video-container">
+                <video id="trailer-video" controls poster="3.png">
+                    <source src="Video/Mattia Fiacco Mazzini.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Radio Spot Modal -->
+    <div class="modal" id="radio-spot-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="radio-spot-title">Radio Spot Title</h2>
+            <div class="audio-container">
+                <div class="audio-player">
+                    <div class="player-controls">
+                        <button id="play-pause-btn" class="play-pause-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="volume-container">
+                            <button id="mute-btn" class="mute-btn">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <div class="volume-slider">
+                                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audio-player" preload="metadata"></audio>
+                </div>
+                <div class="audio-info">
+                    <p id="audio-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Immediately hide preloader when page is loaded
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // Backup timeout to hide preloader after 1.5 seconds if load event doesn't fire
+        setTimeout(function() {
+            document.getElementById('preloader').style.display = 'none';
+        }, 1500);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Floating Spheres
+            const spheres = document.querySelectorAll('.floating-sphere');
+            const spheresContainer = document.querySelector('.floating-spheres-container');
+            
+            // Initialize sphere positions randomly
+            spheres.forEach(sphere => {
+                // Random position within the viewport
+                const randomX = Math.random() * (window.innerWidth - 100);
+                const randomY = Math.random() * (window.innerHeight - 100);
+                
+                // Set initial position
+                sphere.style.left = `${randomX}px`;
+                sphere.style.top = `${randomY}px`;
+                
+                // Add subtle floating animation with random duration
+                const duration = 5 + Math.random() * 10; // Between 5-15s
+                sphere.style.animation = `float ${duration}s ease-in-out infinite alternate`;
+                
+                // Add random delay to make movement more natural
+                sphere.style.animationDelay = `${Math.random() * 5}s`;
+            });
+            
+            // Create keyframes for floating animation
+            const floatKeyframes = `
+                @keyframes float {
+                    0% { transform: translate(0, 0) rotate(0deg); }
+                    25% { transform: translate(10px, 15px) rotate(5deg); }
+                    50% { transform: translate(-5px, 10px) rotate(-5deg); }
+                    75% { transform: translate(-15px, -10px) rotate(3deg); }
+                    100% { transform: translate(10px, -15px) rotate(-3deg); }
+                }
+            `;
+            
+            // Add keyframes to document
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent = floatKeyframes;
+            document.head.appendChild(styleSheet);
+            
+            // Mouse move event to make spheres avoid cursor
+            document.addEventListener('mousemove', function(e) {
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                spheres.forEach(sphere => {
+                    const sphereRect = sphere.getBoundingClientRect();
+                    const sphereX = sphereRect.left + sphereRect.width / 2;
+                    const sphereY = sphereRect.top + sphereRect.height / 2;
+                    
+                    // Calculate distance between cursor and sphere
+                    const dx = mouseX - sphereX;
+                    const dy = mouseY - sphereY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Only react if cursor is close enough (within 150px)
+                    if (distance < 150) {
+                        // Calculate repulsion force (stronger when closer)
+                        const force = 1 - distance / 150;
+                        
+                        // Calculate repulsion direction (away from cursor)
+                        const angle = Math.atan2(dy, dx);
+                        const repulsionX = -Math.cos(angle) * force * 50;
+                        const repulsionY = -Math.sin(angle) * force * 50;
+                        
+                        // Apply repulsion
+                        sphere.style.transform = `translate(${repulsionX}px, ${repulsionY}px)`;
+                    } else {
+                        // Reset transform when cursor is far away
+                        sphere.style.transform = '';
+                    }
+                });
+            });
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navLinks.classList.remove('active');
+                        navToggle.classList.remove('active');
+                    }
+                });
+            });
+
+            // Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function checkReveal() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = revealElements[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add('active');
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Check on load
+
+            // Back to Top Button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            // Countdown Timer
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 100); // 100 days from now
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+
+
+            // Trailer Modal
+            const trailerBtn = document.getElementById('trailer-btn');
+            const trailerModal = document.getElementById('trailer-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const trailerVideo = document.getElementById('trailer-video');
+            
+            trailerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                trailerModal.classList.add('active');
+                // Start playing the video when modal opens
+                trailerVideo.play();
+            });
+            
+            closeModal.addEventListener('click', function() {
+                trailerModal.classList.remove('active');
+                // Pause the video when modal closes
+                trailerVideo.pause();
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === trailerModal) {
+                    trailerModal.classList.remove('active');
+                    // Pause the video when modal closes
+                    trailerVideo.pause();
+                }
+            });
+
+            // Sticky Navigation
+            const mainNav = document.querySelector('.main-nav');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    mainNav.classList.add('sticky');
+                } else {
+                    mainNav.classList.remove('sticky');
+                }
+            });
+            
+            // Radio Spot Modal and Audio Player
+            const radioSpotBtns = document.querySelectorAll('.radio-spot-btn');
+            const radioSpotModal = document.getElementById('radio-spot-modal');
+            const radioSpotTitle = document.getElementById('radio-spot-title');
+            const radioModalClose = radioSpotModal.querySelector('.close-modal');
+            const audioPlayer = document.getElementById('audio-player');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const muteBtn = document.getElementById('mute-btn');
+            const progressBar = document.getElementById('progress');
+            const progressContainer = document.querySelector('.progress-bar');
+            const currentTimeDisplay = document.getElementById('current-time');
+            const durationDisplay = document.getElementById('duration');
+            const volumeSlider = document.getElementById('volume');
+            const audioDescription = document.getElementById('audio-description');
+            
+            // Audio file paths
+            const audioFiles = {
+                'spot1': 'RADIOSPOTS/ElevenLabs_2025-03-19T19_14_33_Antonio Farina - Italian PRO Talent - Audiobook, Narration_pvc_s35_sb80_se55_b_m2.mp3',
+                'spot2': 'RADIOSPOTS/ElevenLabs_2025-03-19T19_34_52_Laura_pre_s50_sb75_se48_b_m2.mp3',
+                'spot3': 'RADIOSPOTS/ElevenLabs_2025-03-19T19_34_52_Laura_pre_s50_sb75_se48a_b_m2.mp3'
+            };
+            
+            // Audio descriptions
+            const audioDescriptions = {
+                'spot1': 'A mysterious voice calls out across the five kingdoms, setting the stage for an epic adventure that will change the fate of the world.',
+                'spot2': 'The heroes combine their elemental powers in a spectacular display of unity against the growing darkness.',
+                'spot3': 'The final battle between Kael\'s team and Riven reaches its climax as they fight for control of the Sphere of Essence.'
+            };
+            
+            // Format time in minutes and seconds
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = Math.floor(seconds % 60);
+                return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+            
+            // Update progress bar and time display
+            function updateProgress() {
+                if (audioPlayer.duration) {
+                    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                    progressBar.style.width = `${percentage}%`;
+                    currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+                    durationDisplay.textContent = formatTime(audioPlayer.duration);
+                }
+            }
+            
+            // Set up audio player event listeners
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+            
+            audioPlayer.addEventListener('loadedmetadata', function() {
+                durationDisplay.textContent = formatTime(audioPlayer.duration);
+            });
+            
+            audioPlayer.addEventListener('ended', function() {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                progressBar.style.width = '0%';
+                audioPlayer.currentTime = 0;
+            });
+            
+            // Play/Pause button functionality
+            playPauseBtn.addEventListener('click', function() {
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    audioPlayer.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+            
+            // Click on progress bar to seek
+            progressContainer.addEventListener('click', function(e) {
+                const clickPosition = (e.offsetX / this.offsetWidth);
+                const seekTime = clickPosition * audioPlayer.duration;
+                audioPlayer.currentTime = seekTime;
+            });
+            
+            // Volume control
+            volumeSlider.addEventListener('input', function() {
+                audioPlayer.volume = this.value;
+                if (this.value === '0') {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                } else {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
+            });
+            
+            // Mute button
+            muteBtn.addEventListener('click', function() {
+                if (audioPlayer.muted) {
+                    audioPlayer.muted = false;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                } else {
+                    audioPlayer.muted = true;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }
+            });
+            
+            // Radio spot buttons click handler
+            radioSpotBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const radioSpot = this.closest('.radio-spot');
+                    const title = radioSpot.querySelector('h3').textContent;
+                    const spotId = radioSpot.getAttribute('data-spot');
+                    
+                    // Set the title in the modal
+                    radioSpotTitle.textContent = title;
+                    
+                    // Reset audio player
+                    audioPlayer.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    progressBar.style.width = '0%';
+                    
+                    // Load the appropriate audio file
+                    audioPlayer.src = audioFiles[spotId];
+                    
+                    // Set the audio description
+                    audioDescription.textContent = audioDescriptions[spotId];
+                    
+                    // Show the modal
+                    radioSpotModal.classList.add('active');
+                });
+            });
+            
+            // Close modal and pause audio
+            radioModalClose.addEventListener('click', function() {
+                audioPlayer.pause();
+                radioSpotModal.classList.remove('active');
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === radioSpotModal) {
+                    audioPlayer.pause();
+                    radioSpotModal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

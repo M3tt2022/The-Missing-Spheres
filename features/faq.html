@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - THE MISSING SPHERES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="features.css">
+</head>
+<body>
+    <!-- Floating Spheres -->
+    <div class="floating-spheres-container">
+        <div class="floating-sphere" data-size="small" data-color="water"></div>
+        <div class="floating-sphere" data-size="medium" data-color="fire"></div>
+        <div class="floating-sphere" data-size="large" data-color="spirit"></div>
+        <div class="floating-sphere" data-size="small" data-color="earth"></div>
+        <div class="floating-sphere" data-size="medium" data-color="air"></div>
+        <div class="floating-sphere" data-size="small" data-color="darkness"></div>
+    </div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="sphere-loader"></div>
+            <p>Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">THE MISSING SPHERES</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#story" class="nav-link">Story</a></li>
+                    <li><a href="../index.html#characters" class="nav-link">Characters</a></li>
+                    <li><a href="../index.html#kingdoms" class="nav-link">Kingdoms</a></li>
+                    <li><a href="map.html" class="nav-link">Map</a></li>
+                    <li><a href="quiz.html" class="nav-link">Element Quiz</a></li>
+                    <li><a href="../index.html#radio-spots" class="nav-link">Radio Spots</a></li>
+                    <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="glossary.html" class="nav-link">Glossary</a></li>
+                    <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title reveal">FREQUENTLY ASKED QUESTIONS</h2>
+            <p class="section-intro reveal">Find answers to common questions about The Missing Spheres movie and the world of cinema. If you can't find what you're looking for, feel free to contact us through our social media channels.</p>
+            
+            <div class="faq-container reveal">
+                <div class="faq-tabs">
+                    <div class="faq-tab active" data-tab="movie">About The Movie</div>
+                    <div class="faq-tab" data-tab="cinema">About Cinema</div>
+                </div>
+                
+                <div class="faq-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="faq-search-input" placeholder="Search questions...">
+                </div>
+                
+                <!-- Movie FAQ Content -->
+                <div class="faq-content active" id="movie-content">
+                    <!-- Release & Viewing -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Release & Viewing</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>When will The Missing Spheres be released?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres is scheduled for a global theatrical release on December 15, 2025. The film will have premiere events in major cities worldwide starting December 10, 2025.</p>
+                                <p>Digital and streaming platform releases will follow approximately three months after the theatrical release. Stay tuned to our social media channels for the most up-to-date information on release dates in your region.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Will The Missing Spheres be available in 3D and IMAX?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! The Missing Spheres has been specially formatted for both 3D and IMAX experiences. Director Mattia F.M shot key sequences with IMAX cameras to take full advantage of the expanded aspect ratio, creating a truly immersive experience.</p>
+                                <p>We recommend viewing the film in IMAX 3D for the most spectacular experience of the elemental kingdoms and magical effects. Standard 2D screenings will also be available in all theaters.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Will there be early screenings or fan events?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We're planning several special fan events in the months leading up to the release. These will include:</p>
+                                <p>- Exclusive footage screenings at major comic conventions</p>
+                                <p>- Cast Q&A sessions in select cities</p>
+                                <p>- Special themed early access screenings the night before official release</p>
+                                <p>- Interactive fan experiences that bring the five kingdoms to life</p>
+                                <p>Sign up for our newsletter to be the first to know about events in your area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Production & Cast -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Production & Cast</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Who are the main cast members of The Missing Spheres?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres features an ensemble cast of both established stars and exciting new talent:</p>
+                                <p>- Kael: Alessandro Gassman</p>
+                                <p>- Lyra: Matilda De Angelis</p>
+                                <p>- Zayn: Michele Morrone</p>
+                                <p>- Nami: Cristiana Dell'Anna</p>
+                                <p>- Gorran: Pierfrancesco Favino</p>
+                                <p>- Riven: Luca Marinelli</p>
+                                <p>The film also features numerous talented actors in supporting roles, bringing the diverse inhabitants of the five kingdoms to life.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How long did it take to make The Missing Spheres?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres has been in development for over five years. The script went through three years of development and refinement before production began. Principal photography lasted 10 months, with filming taking place in various locations around the world to capture the diverse environments of the five kingdoms.</p>
+                                <p>Post-production, including the extensive visual effects work, has been ongoing for 18 months to ensure the highest quality for the magical elements and fantastical settings of the film. In total, from initial concept to final release, The Missing Spheres represents nearly six years of creative work.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Where was The Missing Spheres filmed?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres was filmed in multiple stunning locations around the world to capture the unique essence of each elemental kingdom:</p>
+                                <p>- Aquaris scenes were filmed along the Amalfi Coast and in underwater studios in Malta</p>
+                                <p>- Pyroheim sequences were captured near Mount Etna in Sicily and in the volcanic landscapes of Iceland</p>
+                                <p>- Zephyria's floating islands were created using a combination of sets built in Rome's Cinecittà Studios and on-location shooting in the Dolomites</p>
+                                <p>- Terravale was primarily filmed in the ancient forests of Umbria and Tuscany</p>
+                                <p>- Luminara's mystical landscapes were created through a combination of practical sets and cutting-edge digital environments</p>
+                                <p>Additional studio work was completed at Cinecittà Studios in Rome, where many of the interior scenes were filmed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Story & Universe -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Story & Universe</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is The Missing Spheres based on a book or other source material?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres is an original story created by director Mattia F.M. It is not based on any existing book, comic, or other source material. The world, characters, and mythology were developed specifically for this film.</p>
+                                <p>However, a companion novel exploring the history of the five kingdoms and expanding on the film's mythology will be released shortly after the movie premieres. Additionally, a graphic novel series is in development that will tell stories set before the events of the film.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Will The Missing Spheres be part of a series or franchise?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, The Missing Spheres is planned as the first installment in a trilogy. The story has been conceived with a complete three-part arc, with each film designed to stand on its own while contributing to the larger narrative.</p>
+                                <p>If the first film is successful, production on the sequel is tentatively scheduled to begin in early 2026. Beyond the main trilogy, there is potential for spin-off films exploring other characters and aspects of the five kingdoms.</p>
+                                <p>Additionally, an animated series exploring the ancient history of the elemental kingdoms is in early development for streaming platforms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What age group is The Missing Spheres appropriate for?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The Missing Spheres is anticipated to receive a PG-13 rating (or equivalent in other countries). The film contains fantasy action and adventure, some intense sequences involving elemental powers, and themes of betrayal and sacrifice that may be too complex for very young viewers.</p>
+                                <p>The film has been crafted to appeal to a wide audience, from teenagers to adults. While there are intense moments, the film avoids graphic violence and explicit content, focusing instead on the emotional journey of the characters and the spectacular visual representation of the elemental powers.</p>
+                                <p>Parents are encouraged to review the film's rating and content advisories when they become available closer to release.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cinema FAQ Content -->
+                <div class="faq-content" id="cinema-content">
+                    <!-- Film Production -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Film Production</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are the main stages of making a movie?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Film production typically follows these main stages:</p>
+                                <p><strong>1. Development:</strong> The initial stage where the concept is created, the screenplay is written, and financing is secured. This can take anywhere from months to years.</p>
+                                <p><strong>2. Pre-production:</strong> Planning phase where the crew is hired, locations are scouted, casting is completed, and shooting schedule is created. This typically takes 3-6 months for a major film.</p>
+                                <p><strong>3. Production:</strong> The actual filming of the movie. For a feature film, this can range from a few weeks to several months depending on complexity.</p>
+                                <p><strong>4. Post-production:</strong> Editing, visual effects, sound design, music composition, and color grading. For effects-heavy films like The Missing Spheres, this can take a year or more.</p>
+                                <p><strong>5. Distribution:</strong> Marketing and releasing the film to theaters, streaming platforms, and other media.</p>
+                                <p>For a major fantasy film like The Missing Spheres, the entire process from initial concept to theatrical release typically takes 3-6 years.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How are visual effects created for fantasy films?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Visual effects (VFX) for fantasy films involve a complex process combining multiple techniques:</p>
+                                <p><strong>1. Pre-visualization:</strong> Before filming begins, key sequences are mapped out using computer animation to plan complex shots.</p>
+                                <p><strong>2. Practical Effects:</strong> Physical effects created on set, such as pyrotechnics, mechanical props, and makeup effects.</p>
+                                <p><strong>3. Green/Blue Screen:</strong> Actors perform in front of colored screens that allow backgrounds to be replaced digitally.</p>
+                                <p><strong>4. Motion Capture:</strong> Recording actors' movements to animate digital characters.</p>
+                                <p><strong>5. Computer-Generated Imagery (CGI):</strong> Creating digital elements, characters, and environments using specialized software.</p>
+                                <p><strong>6. Compositing:</strong> Combining all elements (live-action footage, CGI, etc.) into final shots.</p>
+                                <p>For The Missing Spheres, we've used cutting-edge techniques to create the elemental powers, with each element having its own unique visual signature. Water effects use fluid simulation technology, fire effects combine practical pyrotechnics with digital enhancement, air effects utilize particle systems, earth effects use a combination of practical sets and digital extensions, and spirit effects feature proprietary light and energy simulations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What's the difference between a director, producer, and screenwriter?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Director:</strong> The creative leader who guides the artistic vision of the film. They work with actors on performances, make decisions about camera angles and movements, and oversee all creative aspects to ensure a cohesive vision. The director is ultimately responsible for translating the screenplay into visual storytelling.</p>
+                                <p><strong>Producer:</strong> Handles the business and organizational aspects of filmmaking. Producers secure financing, manage the budget, hire key crew members, oversee scheduling, and solve logistical problems. They ensure the film is completed on time and within budget while supporting the director's creative vision.</p>
+                                <p><strong>Screenwriter:</strong> Creates the screenplay, which includes the story, dialogue, scene descriptions, and character development. The screenwriter establishes the narrative foundation that the rest of the production builds upon.</p>
+                                <p>In the case of The Missing Spheres, Mattia F.M serves as both director and co-screenwriter, allowing for a particularly unified creative vision from script to screen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Film Technology -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Film Technology</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What makes IMAX different from standard cinema?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>IMAX offers a premium cinematic experience that differs from standard theaters in several key ways:</p>
+                                <p><strong>Screen Size and Shape:</strong> IMAX screens are significantly larger and have a taller aspect ratio (up to 1.43:1 compared to standard 1.85:1 or 2.39:1), creating a more immersive field of view that fills more of your peripheral vision.</p>
+                                <p><strong>Image Quality:</strong> IMAX uses proprietary digital or 70mm film projection systems that deliver higher resolution, greater brightness, and enhanced clarity.</p>
+                                <p><strong>Sound System:</strong> IMAX theaters feature advanced sound systems with precise speaker placement and calibration that create a more immersive audio experience.</p>
+                                <p><strong>Theater Design:</strong> IMAX theaters are designed with optimized seating arrangements, screen proximity, and viewing angles to ensure every seat has an optimal view.</p>
+                                <p>For The Missing Spheres, several key sequences were filmed with IMAX-certified cameras to take full advantage of the expanded aspect ratio, allowing audiences to see up to 26% more image in IMAX theaters during these scenes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How does 3D cinema work?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>3D cinema creates the illusion of depth by presenting slightly different images to each eye, mimicking how our eyes naturally perceive depth in the real world. Here's how it works:</p>
+                                <p><strong>Filming:</strong> Movies can be filmed using specialized 3D camera rigs with two lenses (mimicking human eyes) or converted to 3D in post-production.</p>
+                                <p><strong>Projection:</strong> In theaters, two synchronized images are projected onto the screen, one for each eye.</p>
+                                <p><strong>Glasses:</strong> 3D glasses ensure each eye sees only its intended image:</p>
+                                <p>- Passive 3D uses polarized glasses that filter light differently for each eye</p>
+                                <p>- Active 3D uses battery-powered glasses with shutters that rapidly alternate between eyes in sync with the projector</p>
+                                <p><strong>Brain Processing:</strong> Your brain combines these two slightly different images to create the perception of depth.</p>
+                                <p>The Missing Spheres was designed with 3D in mind from the beginning, with scenes specifically composed to enhance the depth perception and immersive quality of the elemental kingdoms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is the difference between practical effects and CGI?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Practical Effects</strong> are physical, real-world special effects created without computer technology. These include:</p>
+                                <p>- Makeup and prosthetics for character transformations</p>
+                                <p>- Animatronics and puppetry for creatures</p>
+                                <p>- Miniature models for buildings or landscapes</p>
+                                <p>- Pyrotechnics for explosions and fire effects</p>
+                                <p>- Mechanical rigs for stunts and movements</p>
+                                <p><strong>CGI (Computer-Generated Imagery)</strong> refers to visual effects created digitally using computer software. CGI can create:</p>
+                                <p>- Entirely digital characters and creatures</p>
+                                <p>- Virtual environments and landscapes</p>
+                                <p>- Physics simulations (water, fire, destruction)</p>
+                                <p>- Digital enhancements to practical footage</p>
+                                <p>- Impossible camera movements</p>
+                                <p>Modern blockbusters like The Missing Spheres typically use a hybrid approach, combining practical effects with CGI to get the best of both worlds. Practical effects often provide a tangible realism that actors can interact with, while CGI allows for impossible visuals that couldn't be achieved physically.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Film History & Culture -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Film History & Culture</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are some of the most influential fantasy films in cinema history?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Fantasy cinema has a rich history with many groundbreaking films that have shaped the genre:</p>
+                                <p><strong>The Wizard of Oz (1939)</strong> - Pioneered the use of Technicolor and special effects to create a magical world, establishing many fantasy film conventions.</p>
+                                <p><strong>Star Wars (1977)</strong> - While often categorized as science fiction, its hero's journey structure and mystical elements have heavily influenced fantasy storytelling.</p>
+                                <p><strong>The NeverEnding Story (1984)</strong> - Captured the imagination of a generation with its blend of practical effects and emotional storytelling.</p>
+                                <p><strong>The Lord of the Rings trilogy (2001-2003)</strong> - Revolutionized fantasy filmmaking with its epic scale, groundbreaking visual effects, and faithful adaptation of literary source material.</p>
+                                <p><strong>Pan's Labyrinth (2006)</strong> - Guillermo del Toro's dark fantasy masterpiece demonstrated how the genre could be used for profound artistic expression.</p>
+                                <p><strong>Harry Potter series (2001-2011)</strong> - Brought fantasy to a new generation and showcased the potential for long-form storytelling in film.</p>
+                                <p>The Missing Spheres draws inspiration from these classics while aiming to push the boundaries of the genre with its unique elemental magic system and contemporary themes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How has Italian cinema influenced modern filmmaking?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Italian cinema has made profound contributions to global filmmaking through several key movements and innovations:</p>
+                                <p><strong>Neorealism (1940s-1950s)</strong> - Directors like Roberto Rossellini, Vittorio De Sica, and Luchino Visconti pioneered a style focused on everyday life, often using non-professional actors and location shooting. This approach influenced filmmakers worldwide to embrace authenticity and social realism.</p>
+                                <p><strong>Cinecittà Studios</strong> - Founded in 1937, Rome's "Cinema City" became one of Europe's major film production centers, hosting international productions from "Ben-Hur" to Fellini's masterpieces.</p>
+                                <p><strong>Federico Fellini</strong> - His dreamlike, surreal style in films like "8½" and "La Dolce Vita" expanded the visual language of cinema and influenced countless directors, from Woody Allen to David Lynch.</p>
+                                <p><strong>Spaghetti Westerns</strong> - Sergio Leone revolutionized the Western genre with films like "The Good, the Bad and the Ugly," introducing innovative cinematography, editing, and musical techniques.</p>
+                                <p><strong>Giallo Films</strong> - These stylish Italian thrillers by directors like Dario Argento influenced horror and thriller filmmaking with their distinctive visual style and suspense techniques.</p>
+                                <p>The Missing Spheres honors this rich heritage while bringing Italian filmmaking into the fantasy genre with a distinctly Mediterranean sensibility in its visual style and storytelling approach.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is the role of film festivals in the movie industry?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Film festivals serve multiple crucial functions in the cinema ecosystem:</p>
+                                <p><strong>Discovery Platform</strong> - Festivals provide exposure for independent and international films that might not otherwise secure wide distribution, helping them find audiences and distributors.</p>
+                                <p><strong>Industry Networking</strong> - They bring together filmmakers, producers, distributors, and investors, facilitating deals and collaborations that lead to future projects.</p>
+                                <p><strong>Artistic Recognition</strong> - Festival awards and critical reception can establish a film's artistic credentials and generate buzz before wider release.</p>
+                                <p><strong>Cultural Exchange</strong> - International festivals promote cross-cultural understanding by showcasing diverse perspectives and storytelling traditions.</p>
+                                <p><strong>Market Function</strong> - Many festivals include film markets where distribution rights are bought and sold.</p>
+                                <p><strong>Audience Feedback</strong> - Festivals provide filmmakers with valuable audience reactions before commercial release.</p>
+                                <p>Major festivals like Cannes, Venice, Berlin, Toronto, and Sundance have launched countless careers and films. While The Missing Spheres is a major studio production, elements of the film will be showcased at select festivals prior to its worldwide release to build critical acclaim and audience anticipation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empty State -->
+                <div class="faq-empty" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <p>No questions found matching your search.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="directed-by">DIRECTED BY MATTIA F.M</p>
+                <p class="copyright">&copy; 2025 THE MISSING SPHERES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Functionality
+            const searchInput = document.getElementById('faq-search-input');
+            const faqTabs = document.querySelectorAll('.faq-tab');
+            const faqContents = document.querySelectorAll('.faq-content');
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const emptyState = document.querySelector('.faq-empty');
+            
+            // Tab switching
+            faqTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    faqTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    faqContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(tabId + '-content').classList.add('active');
+                    
+                    // Reset search
+                    searchInput.value = '';
+                    filterFAQItems('');
+                });
+            });
+            
+            // Question toggling
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all open answers
+                    faqAnswers.forEach(a => {
+                        a.classList.remove('active');
+                        a.previousElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current answer
+                    if (!isActive) {
+                        answer.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                filterFAQItems(searchTerm);
+            });
+            
+            // Filter FAQ items based on search term
+            function filterFAQItems(searchTerm) {
+                const activeTab = document.querySelector('.faq-tab.active').getAttribute('data-tab');
+                const activeContent = document.getElementById(activeTab + '-content');
+                const items = activeContent.querySelectorAll('.faq-item');
+                
+                let visibleCount = 0;
+                
+                items.forEach(item => {
+                    const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            }
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // Hide preloader
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1000);
+            
+            // Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function checkReveal() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = revealElements[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add('active');
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Check on load
+            
+            // Back to Top Button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+        });
+    </script>
