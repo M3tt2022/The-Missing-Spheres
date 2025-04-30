@@ -34,15 +34,13 @@
     <nav class="main-nav">
         <div class="container">
             <div class="nav-content">
-                <a href="../index.html" class="logo">THE MISSING SPHERES</a>
+                <a href="../index.html" class="logo">THE MISSING<br>SPHERES</a>
                 <ul class="nav-links">
                     <li><a href="../index.html#story" class="nav-link">Story</a></li>
                     <li><a href="../index.html#characters" class="nav-link">Characters</a></li>
-                    <li><a href="../index.html#kingdoms" class="nav-link">Kingdoms</a></li>
                     <li><a href="map.html" class="nav-link active">Map</a></li>
                     <li><a href="quiz.html" class="nav-link">Element Quiz</a></li>
-                    <li><a href="../index.html#radio-spots" class="nav-link">Radio Spots</a></li>
-                    <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="../social-reactions.html" class="nav-link">Fan Reactions</a></li>
                     <li><a href="glossary.html" class="nav-link">Glossary</a></li>
                     <li><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
@@ -212,7 +210,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="footer-logo">THE MISSING<br>SPHERES</div>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -230,6 +228,65 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Map Controls -->
+    <div class="map-controls">
+        <div class="zoom-controls">
+            <button id="zoom-in" class="map-control-btn"><i class="fas fa-plus"></i></button>
+            <button id="zoom-out" class="map-control-btn"><i class="fas fa-minus"></i></button>
+            <button id="reset-view" class="map-control-btn"><i class="fas fa-sync-alt"></i></button>
+        </div>
+        <div class="view-controls">
+            <button id="toggle-poi" class="map-control-btn active"><i class="fas fa-map-marker-alt"></i></button>
+            <button id="toggle-path" class="map-control-btn active"><i class="fas fa-route"></i></button>
+            <button id="toggle-effects" class="map-control-btn active"><i class="fas fa-magic"></i></button>
+        </div>
+    </div>
+    
+    <!-- Points of Interest Modal -->
+    <div class="poi-details" id="poi-details">
+        <div class="poi-details-content">
+            <button class="close-poi-details"><i class="fas fa-times"></i></button>
+            
+            <div class="poi-details-header">
+                <h3 class="poi-details-title" id="poi-title">Location Name</h3>
+                <div class="poi-details-kingdom" id="poi-kingdom">Kingdom</div>
+            </div>
+            
+            <div class="poi-details-image" id="poi-image"></div>
+            
+            <div class="poi-details-info">
+                <p id="poi-description">Location description will appear here.</p>
+            </div>
+            
+            <div class="poi-details-meta">
+                <div class="poi-meta-item">
+                    <i class="fas fa-landmark"></i>
+                    <span id="poi-type">Location Type</span>
+                </div>
+                <div class="poi-meta-item">
+                    <i class="fas fa-star"></i>
+                    <span id="poi-significance">Significance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Journey Path Legend -->
+    <div class="journey-legend">
+        <h3>Hero's Journey</h3>
+        <div class="journey-legend-item">
+            <div class="journey-line kael"></div>
+            <span>Kael's Path</span>
+        </div>
+        <div class="journey-legend-item">
+            <div class="journey-line group"></div>
+            <span>Group Path</span>
+        </div>
+        <button id="animate-journey" class="journey-btn">
+            <i class="fas fa-play"></i> Animate Journey
+        </button>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Interactive Map Functionality
@@ -237,6 +294,7 @@
             const kingdomInfos = document.querySelectorAll('.kingdom-info');
             const worldMap = document.querySelector('.world-map');
             const closeButtons = document.querySelectorAll('.close-kingdom-info');
+            const mapImage = document.querySelector('.map-image');
             
             // Function to close all kingdom info panels
             function closeAllKingdomInfos() {
@@ -261,6 +319,9 @@
                 
                 // Show corresponding info panel
                 document.getElementById(`${kingdomName}-info`).classList.add('active');
+                
+                // Zoom to kingdom (simple animation for demo)
+                zoomToKingdom(kingdomName);
             }
             
             // Show kingdom info when image map area is clicked
@@ -293,6 +354,405 @@
                 // Only close if the click is directly on the map (not on an area or info panel)
                 if (e.target === worldMap || e.target === document.querySelector('.map-image')) {
                     closeAllKingdomInfos();
+                }
+            });
+            
+            // Zoom and Pan functionality
+            let currentScale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+            
+            // Zoom controls
+            const zoomInBtn = document.getElementById('zoom-in');
+            const zoomOutBtn = document.getElementById('zoom-out');
+            const resetViewBtn = document.getElementById('reset-view');
+            
+            zoomInBtn.addEventListener('click', function() {
+                if (currentScale < 2) {
+                    currentScale += 0.2;
+                    updateMapTransform();
+                }
+            });
+            
+            zoomOutBtn.addEventListener('click', function() {
+                if (currentScale > 0.5) {
+                    currentScale -= 0.2;
+                    updateMapTransform();
+                }
+            });
+            
+            resetViewBtn.addEventListener('click', function() {
+                currentScale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateMapTransform();
+                closeAllKingdomInfos();
+            });
+            
+            // Function to update map transform
+            function updateMapTransform() {
+                mapImage.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+            }
+            
+            // Function to zoom to specific kingdom
+            function zoomToKingdom(kingdomName) {
+                // Reset transform first
+                currentScale = 1;
+                translateX = 0;
+                translateY = 0;
+                
+                // Set transform based on kingdom
+                switch(kingdomName) {
+                    case 'aquaris':
+                        currentScale = 1.5;
+                        translateX = 50;
+                        translateY = 100;
+                        break;
+                    case 'pyroheim':
+                        currentScale = 1.5;
+                        translateX = 50;
+                        translateY = -100;
+                        break;
+                    case 'zephyria':
+                        currentScale = 1.5;
+                        translateX = -50;
+                        translateY = -100;
+                        break;
+                    case 'terravale':
+                        currentScale = 1.5;
+                        translateX = -150;
+                        translateY = 0;
+                        break;
+                    case 'luminara':
+                        currentScale = 1.5;
+                        translateX = 0;
+                        translateY = 0;
+                        break;
+                }
+                
+                // Apply transform with animation
+                mapImage.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                updateMapTransform();
+                
+                // Remove transition after animation completes
+                setTimeout(function() {
+                    mapImage.style.transition = '';
+                }, 800);
+            }
+            
+            // Pan functionality
+            mapImage.addEventListener('mousedown', function(e) {
+                if (e.button === 0) { // Left mouse button
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    mapImage.style.cursor = 'grabbing';
+                }
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging) {
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateMapTransform();
+                }
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                mapImage.style.cursor = 'grab';
+            });
+            
+            // Prevent dragging from interfering with other interactions
+            mapImage.addEventListener('click', function(e) {
+                if (Math.abs(translateX - (e.clientX - startX)) > 5 || 
+                    Math.abs(translateY - (e.clientY - startY)) > 5) {
+                    e.stopPropagation();
+                }
+            });
+            
+            // Points of Interest
+            const poiData = [
+                {
+                    id: 1,
+                    title: "Coralline",
+                    kingdom: "Aquaris",
+                    type: "Capital City",
+                    significance: "Seat of the Council of Tides",
+                    description: "A magnificent city built on massive coral formations that rise from the depths of the ocean. The buildings are crafted from iridescent shells and living coral, creating a shimmering metropolis that changes colors with the tides.",
+                    position: { x: 700, y: 500 },
+                    element: "water"
+                },
+                {
+                    id: 2,
+                    title: "Cinderspire",
+                    kingdom: "Pyroheim",
+                    type: "Capital City",
+                    significance: "Seat of the Ember Sovereign",
+                    description: "A towering city built within an active volcano. The buildings are carved from obsidian and cooled lava, with eternal flames lighting the streets and providing energy for the city's advanced forges.",
+                    position: { x: 750, y: 150 },
+                    element: "fire"
+                },
+                {
+                    id: 3,
+                    title: "Aetheria",
+                    kingdom: "Zephyria",
+                    type: "Capital City",
+                    significance: "Seat of the Windborne Council",
+                    description: "A breathtaking city of floating islands connected by wind bridges. The structures are built from lightweight materials that seem to defy gravity, with wind chimes and banners that create a constant symphony.",
+                    position: { x: 400, y: 150 },
+                    element: "air"
+                },
+                {
+                    id: 4,
+                    title: "Roothold",
+                    kingdom: "Terravale",
+                    type: "Capital City",
+                    significance: "Seat of the Root Council",
+                    description: "A city built within and around massive ancient trees. The buildings are integrated with living wood and stone, creating a harmonious blend of nature and architecture.",
+                    position: { x: 150, y: 250 },
+                    element: "earth"
+                },
+                {
+                    id: 5,
+                    title: "Illumina",
+                    kingdom: "Luminara",
+                    type: "Capital City",
+                    significance: "Seat of the Circle of Light",
+                    description: "A mystical city that exists partially in the physical realm and partially in the spirit world. The buildings are made of crystalline structures that capture and amplify spiritual energy.",
+                    position: { x: 450, y: 300 },
+                    element: "spirit"
+                },
+                {
+                    id: 6,
+                    title: "The Convergence",
+                    kingdom: "Luminara",
+                    type: "Sacred Site",
+                    significance: "Where the Sphere of Essence was kept",
+                    description: "A temple at the exact center of the five kingdoms where the elemental energies naturally converge. This is where the Sphere of Essence was housed and protected until its theft by Riven.",
+                    position: { x: 450, y: 330 },
+                    element: "spirit"
+                },
+                {
+                    id: 7,
+                    title: "Abyssal Trench",
+                    kingdom: "Aquaris",
+                    type: "Natural Wonder",
+                    significance: "Source of water elemental energy",
+                    description: "A massive underwater canyon that glows with elemental energy. The waters here are said to have healing properties and are the source of Aquaris's elemental power.",
+                    position: { x: 650, y: 550 },
+                    element: "water"
+                },
+                {
+                    id: 8,
+                    title: "Eternal Pyre",
+                    kingdom: "Pyroheim",
+                    type: "Natural Wonder",
+                    significance: "Source of fire elemental energy",
+                    description: "A massive column of flame that has burned continuously for thousands of years. It is the source of Pyroheim's elemental power and is said to contain the essence of the first fire.",
+                    position: { x: 700, y: 100 },
+                    element: "fire"
+                }
+            ];
+            
+            // Create POI markers
+            const worldMapContainer = document.querySelector('.world-map');
+            
+            poiData.forEach(poi => {
+                const poiMarker = document.createElement('div');
+                poiMarker.className = `poi-marker ${poi.element}`;
+                poiMarker.setAttribute('data-poi-id', poi.id);
+                poiMarker.style.left = `${poi.position.x}px`;
+                poiMarker.style.top = `${poi.position.y}px`;
+                poiMarker.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+                worldMapContainer.appendChild(poiMarker);
+            });
+            
+            // POI Details Modal
+            const poiDetailsModal = document.getElementById('poi-details');
+            const closePOIDetails = document.querySelector('.close-poi-details');
+            const poiTitle = document.getElementById('poi-title');
+            const poiKingdom = document.getElementById('poi-kingdom');
+            const poiDescription = document.getElementById('poi-description');
+            const poiType = document.getElementById('poi-type');
+            const poiSignificance = document.getElementById('poi-significance');
+            const poiImage = document.getElementById('poi-image');
+            
+            // Show POI details when marker is clicked
+            const poiMarkers = document.querySelectorAll('.poi-marker');
+            
+            poiMarkers.forEach(marker => {
+                marker.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const poiId = parseInt(this.getAttribute('data-poi-id'));
+                    const poi = poiData.find(p => p.id === poiId);
+                    
+                    if (poi) {
+                        // Populate POI details
+                        poiTitle.textContent = poi.title;
+                        poiKingdom.textContent = poi.kingdom;
+                        poiDescription.textContent = poi.description;
+                        poiType.textContent = poi.type;
+                        poiSignificance.textContent = poi.significance;
+                        poiImage.className = `poi-details-image ${poi.element}`;
+                        
+                        // Show modal
+                        poiDetailsModal.classList.add('active');
+                    }
+                });
+            });
+            
+            // Close POI details modal
+            closePOIDetails.addEventListener('click', function() {
+                poiDetailsModal.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside content
+            poiDetailsModal.addEventListener('click', function(e) {
+                if (e.target === poiDetailsModal) {
+                    poiDetailsModal.classList.remove('active');
+                }
+            });
+            
+            // Toggle POI visibility
+            const togglePOIBtn = document.getElementById('toggle-poi');
+            
+            togglePOIBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                if (this.classList.contains('active')) {
+                    poiMarkers.forEach(marker => {
+                        marker.style.display = 'block';
+                    });
+                } else {
+                    poiMarkers.forEach(marker => {
+                        marker.style.display = 'none';
+                    });
+                }
+            });
+            
+            // Journey Path Animation
+            const journeyPathData = [
+                { x: 450, y: 330 }, // Start at The Convergence
+                { x: 150, y: 250 }, // To Roothold
+                { x: 400, y: 150 }, // To Aetheria
+                { x: 750, y: 150 }, // To Cinderspire
+                { x: 700, y: 500 }, // To Coralline
+                { x: 450, y: 300 }  // Back to Illumina
+            ];
+            
+            // Create journey path
+            const journeyPath = document.createElement('svg');
+            journeyPath.className = 'journey-path';
+            journeyPath.setAttribute('width', '100%');
+            journeyPath.setAttribute('height', '100%');
+            journeyPath.style.position = 'absolute';
+            journeyPath.style.top = '0';
+            journeyPath.style.left = '0';
+            journeyPath.style.pointerEvents = 'none';
+            journeyPath.style.zIndex = '5';
+            
+            // Create path elements
+            const groupPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            groupPath.setAttribute("class", "journey-line-path group");
+            groupPath.setAttribute("d", `M${journeyPathData.map(p => `${p.x},${p.y}`).join(' L')}`);
+            groupPath.setAttribute("stroke-width", "4");
+            groupPath.setAttribute("stroke", "#ffffff");
+            groupPath.setAttribute("stroke-opacity", "0.7");
+            
+            const kaelPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            kaelPath.setAttribute("class", "journey-line-path kael");
+            kaelPath.setAttribute("d", `M${journeyPathData.map(p => `${p.x},${p.y}`).join(' L')}`);
+            kaelPath.setAttribute("stroke-width", "4");
+            kaelPath.setAttribute("stroke", "#e0a80d");
+            kaelPath.setAttribute("stroke-opacity", "0.9");
+            kaelPath.setAttribute("stroke-dasharray", "5, 5");
+            
+            journeyPath.appendChild(groupPath);
+            journeyPath.appendChild(kaelPath);
+            worldMapContainer.appendChild(journeyPath);
+            
+            // Animate journey
+            const animateJourneyBtn = document.getElementById('animate-journey');
+            const journeyLines = document.querySelectorAll('.journey-line-path');
+            
+            animateJourneyBtn.addEventListener('click', function() {
+                // Reset animation
+                journeyLines.forEach(line => {
+                    // Remove any existing animation class
+                    line.classList.remove('animate');
+                    
+                    // Force reflow
+                    void line.offsetWidth;
+                    
+                    // Add animation class
+                    line.classList.add('animate');
+                });
+                
+                // Change button icon during animation
+                this.innerHTML = '<i class="fas fa-sync fa-spin"></i> Animating...';
+                
+                // Reset button after animation
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-play"></i> Animate Journey';
+                }, 10000);
+            });
+            
+            // Toggle journey path visibility
+            const togglePathBtn = document.getElementById('toggle-path');
+            
+            togglePathBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                if (this.classList.contains('active')) {
+                    journeyPath.style.display = 'block';
+                    document.querySelector('.journey-legend').style.display = 'block';
+                } else {
+                    journeyPath.style.display = 'none';
+                    document.querySelector('.journey-legend').style.display = 'none';
+                }
+            });
+            
+            // Environmental Effects
+            const toggleEffectsBtn = document.getElementById('toggle-effects');
+            
+            // Create environmental effects
+            const waterEffect = document.createElement('div');
+            waterEffect.className = 'environmental-effect water-effect';
+            
+            const fireEffect = document.createElement('div');
+            fireEffect.className = 'environmental-effect fire-effect';
+            
+            const airEffect = document.createElement('div');
+            airEffect.className = 'environmental-effect air-effect';
+            
+            const earthEffect = document.createElement('div');
+            earthEffect.className = 'environmental-effect earth-effect';
+            
+            const spiritEffect = document.createElement('div');
+            spiritEffect.className = 'environmental-effect spirit-effect';
+            
+            worldMapContainer.appendChild(waterEffect);
+            worldMapContainer.appendChild(fireEffect);
+            worldMapContainer.appendChild(airEffect);
+            worldMapContainer.appendChild(earthEffect);
+            worldMapContainer.appendChild(spiritEffect);
+            
+            // Toggle environmental effects
+            toggleEffectsBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                const effects = document.querySelectorAll('.environmental-effect');
+                
+                if (this.classList.contains('active')) {
+                    effects.forEach(effect => {
+                        effect.style.display = 'block';
+                    });
+                } else {
+                    effects.forEach(effect => {
+                        effect.style.display = 'none';
+                    });
                 }
             });
             

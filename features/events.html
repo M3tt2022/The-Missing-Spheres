@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Calendar - THE MISSING SPHERES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="features.css">
+    <style>
+        /* Calendar Specific Styles */
+        .events-section {
+            background-color: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .events-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../3.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            filter: blur(8px);
+            z-index: 0;
+        }
+
+        .calendar-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(224, 168, 13, 0.2);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(224, 168, 13, 0.2);
+        }
+
+        .calendar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .calendar-nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(224, 168, 13, 0.2);
+            border: 1px solid rgba(224, 168, 13, 0.3);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-nav-btn:hover {
+            background: rgba(224, 168, 13, 0.3);
+            transform: scale(1.05);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .calendar-weekday {
+            text-align: center;
+            font-weight: 600;
+            padding: 10px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border-radius: var(--border-radius);
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-day:hover {
+            background: rgba(224, 168, 13, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendar-day.has-event {
+            border: 1px solid var(--primary-color);
+        }
+
+        .calendar-day.has-event::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .calendar-day.has-premiere {
+            border: 1px solid var(--fire-color);
+        }
+
+        .calendar-day.has-premiere::after {
+            background-color: var(--fire-color);
+        }
+
+        .calendar-day.has-press {
+            border: 1px solid var(--water-color);
+        }
+
+        .calendar-day.has-press::after {
+            background-color: var(--water-color);
+        }
+
+        .calendar-day.has-meet {
+            border: 1px solid var(--earth-color);
+        }
+
+        .calendar-day.has-meet::after {
+            background-color: var(--earth-color);
+        }
+
+        .calendar-day.has-festival {
+            border: 1px solid var(--air-color);
+        }
+
+        .calendar-day.has-festival::after {
+            background-color: var(--air-color);
+        }
+
+        .calendar-day.today {
+            background: rgba(224, 168, 13, 0.2);
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.5;
+        }
+
+        .day-number {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .day-events {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.7rem;
+            overflow: hidden;
+        }
+
+        .day-event {
+            padding: 2px 4px;
+            border-radius: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #fff;
+        }
+
+        .day-event.premiere {
+            background-color: var(--fire-color);
+        }
+
+        .day-event.press {
+            background-color: var(--water-color);
+        }
+
+        .day-event.meet {
+            background-color: var(--earth-color);
+        }
+
+        .day-event.festival {
+            background-color: var(--air-color);
+        }
+
+        .day-event.release {
+            background-color: var(--primary-color);
+        }
+
+        .event-details {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .event-details.active {
+            display: flex;
+        }
+
+        .event-details-content {
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(224, 168, 13, 0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-event-details {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-event-details:hover {
+            background: rgba(224, 168, 13, 0.3);
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .event-details-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .event-details-title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .event-details-date {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .event-details-info {
+            margin-bottom: 20px;
+        }
+
+        .event-details-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .event-details-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .event-meta-item i {
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .event-action-btn {
+            padding: 10px 20px;
+            background: rgba(224, 168, 13, 0.2);
+            color: var(--primary-color);
+            border: 1px solid rgba(224, 168, 13, 0.3);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .event-action-btn:hover {
+            background: rgba(224, 168, 13, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .calendar-legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .legend-color.premiere {
+            background-color: var(--fire-color);
+        }
+
+        .legend-color.press {
+            background-color: var(--water-color);
+        }
+
+        .legend-color.meet {
+            background-color: var(--earth-color);
+        }
+
+        .legend-color.festival {
+            background-color: var(--air-color);
+        }
+
+        .legend-color.release {
+            background-color: var(--primary-color);
+        }
+
+        .calendar-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(224, 168, 13, 0.2);
+            border-color: rgba(224, 168, 13, 0.3);
+        }
+
+        .filter-btn.premiere {
+            border-color: rgba(255, 107, 8, 0.3);
+        }
+
+        .filter-btn.premiere.active {
+            background: rgba(255, 107, 8, 0.2);
+        }
+
+        .filter-btn.press {
+            border-color: rgba(0, 174, 239, 0.3);
+        }
+
+        .filter-btn.press.active {
+            background: rgba(0, 174, 239, 0.2);
+        }
+
+        .filter-btn.meet {
+            border-color: rgba(76, 175, 80, 0.3);
+        }
+
+        .filter-btn.meet.active {
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        .filter-btn.festival {
+            border-color: rgba(173, 216, 230, 0.3);
+        }
+
+        .filter-btn.festival.active {
+            background: rgba(173, 216, 230, 0.2);
+        }
+
+        .filter-btn.release {
+            border-color: rgba(224, 168, 13, 0.3);
+        }
+
+        .filter-btn.release.active {
+            background: rgba(224, 168, 13, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .calendar-grid {
+                gap: 5px;
+                padding: 10px;
+            }
+
+            .calendar-day {
+                padding: 5px;
+            }
+
+            .day-events {
+                font-size: 0.6rem;
+            }
+
+            .calendar-legend, .calendar-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-weekday {
+                font-size: 0.7rem;
+                padding: 5px;
+            }
+
+            .day-number {
+                font-size: 0.8rem;
+            }
+
+            .day-events {
+                display: none;
+            }
+
+            .calendar-day.has-event::after {
+                width: 6px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Spheres -->
+    <div class="floating-spheres-container">
+        <div class="floating-sphere" data-size="small" data-color="water"></div>
+        <div class="floating-sphere" data-size="medium" data-color="fire"></div>
+        <div class="floating-sphere" data-size="large" data-color="spirit"></div>
+        <div class="floating-sphere" data-size="small" data-color="earth"></div>
+        <div class="floating-sphere" data-size="medium" data-color="air"></div>
+        <div class="floating-sphere" data-size="small" data-color="darkness"></div>
+    </div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="sphere-loader"></div>
+            <p>Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">THE MISSING SPHERES</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#story" class="nav-link">Story</a></li>
+                    <li><a href="../index.html#characters" class="nav-link">Characters</a></li>
+                    <li><a href="../index.html#kingdoms" class="nav-link">Kingdoms</a></li>
+                    <li><a href="map.html" class="nav-link">Map</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="quiz.html" class="nav-link">Element Quiz</a></li>
+                    <li><a href="../index.html#radio-spots" class="nav-link">Radio Spots</a></li>
+                    <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="glossary.html" class="nav-link">Glossary</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <h2 class="section-title reveal">EVENTS CALENDAR</h2>
+            <p class="section-intro reveal">Stay updated with all the exciting events related to The Missing Spheres. From premieres to meet-and-greets, don't miss your chance to be part of the adventure.</p>
+            
+            <div class="calendar-filters reveal">
+                <button class="filter-btn all active" data-filter="all">All Events</button>
+                <button class="filter-btn premiere" data-filter="premiere">Premieres</button>
+                <button class="filter-btn press" data-filter="press">Press Events</button>
+                <button class="filter-btn meet" data-filter="meet">Meet & Greets</button>
+                <button class="filter-btn festival" data-filter="festival">Film Festivals</button>
+                <button class="filter-btn release" data-filter="release">Release Events</button>
+            </div>
+            
+            <div class="calendar-container reveal">
+                <div class="calendar-header">
+                    <div class="calendar-title">July 2025</div>
+                    <div class="calendar-nav">
+                        <button class="calendar-nav-btn" id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <button class="calendar-nav-btn" id="today">Today</button>
+                        <button class="calendar-nav-btn" id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="calendar-grid">
+                    <!-- Weekday Headers -->
+                    <div class="calendar-weekday">Sun</div>
+                    <div class="calendar-weekday">Mon</div>
+                    <div class="calendar-weekday">Tue</div>
+                    <div class="calendar-weekday">Wed</div>
+                    <div class="calendar-weekday">Thu</div>
+                    <div class="calendar-weekday">Fri</div>
+                    <div class="calendar-weekday">Sat</div>
+                    
+                    <!-- Calendar Days (Example for July 2025) -->
+                    <div class="calendar-day other-month">
+                        <div class="day-number">29</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day other-month">
+                        <div class="day-number">30</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">1</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">2</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">3</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">4</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">5</div>
+                        <div class="day-events"></div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-number">6</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">7</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">8</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">9</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">10</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day has-press" data-event-id="1">
+                        <div class="day-number">11</div>
+                        <div class="day-events">
+                            <div class="day-event press">Press Conference</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">12</div>
+                        <div class="day-events"></div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-number">13</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">14</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day has-festival" data-event-id="2">
+                        <div class="day-number">15</div>
+                        <div class="day-events">
+                            <div class="day-event festival">Rome Film Festival</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day has-festival" data-event-id="2">
+                        <div class="day-number">16</div>
+                        <div class="day-events">
+                            <div class="day-event festival">Rome Film Festival</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day has-festival" data-event-id="2">
+                        <div class="day-number">17</div>
+                        <div class="day-events">
+                            <div class="day-event festival">Rome Film Festival</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day has-festival" data-event-id="2">
+                        <div class="day-number">18</div>
+                        <div class="day-events">
+                            <div class="day-event festival">Rome Film Festival</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day has-festival" data-event-id="2">
+                        <div class="day-number">19</div>
+                        <div class="day-events">
+                            <div class="day-event festival">Rome Film Festival</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-number">20</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">21</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">22</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">23</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">24</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day has-meet" data-event-id="3">
+                        <div class="day-number">25</div>
+                        <div class="day-events">
+                            <div class="day-event meet">Cast Meet & Greet</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">26</div>
+                        <div class="day-events"></div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-number">27</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">28</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="day-number">29</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day has-premiere" data-event-id="4">
+                        <div class="day-number">30</div>
+                        <div class="day-events">
+                            <div class="day-event premiere">Milan Premiere</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day has-release today" data-event-id="5">
+                        <div class="day-number">31</div>
+                        <div class="day-events">
+                            <div class="day-event release">Official Release</div>
+                        </div>
+                    </div>
+                    <div class="calendar-day other-month">
+                        <div class="day-number">1</div>
+                        <div class="day-events"></div>
+                    </div>
+                    <div class="calendar-day other-month">
+                        <div class="day-number">2</div>
+                        <div class="day-events"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar-legend reveal">
+                <div class="legend-item">
+                    <div class="legend-color premiere"></div>
+                    <span>Premieres</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color press"></div>
+                    <span>Press Events</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color meet"></div>
+                    <span>Meet & Greets</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color festival"></div>
+                    <span>Film Festivals</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color release"></div>
+                    <span>Release Events</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Event Details Modal -->
+    <div class="event-details" id="event-details">
+        <div class="event-details-content">
+            <button class="close-event-details"><i class="fas fa-times"></i></button>
+            
+            <div class="event-details-header">
+                <h3 class="event-details-title" id="event-title">Event Title</h3>
+                <div class="event-details-date" id="event-date">Event Date</div>
+            </div>
+            
+            <div class="event-details-info">
+                <p id="event-description">Event description will appear here.</p>
+            </div>
+            
+            <div class="event-details-meta">
+                <div class="event-meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="event-location">Event Location</span>
+                </div>
+                <div class="event-meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="event-time">Event Time</span>
+                </div>
+            </div>
+            
+            <div class="event-actions">
+                <button class="event-action-btn" id="add-to-calendar">
+                    <i class="fas fa-calendar-plus"></i>
+                    Add to Calendar
+                </button>
+                <button class="event-action-btn" id="share-event">
+                    <i class="fas fa-share-alt"></i>
+                    Share Event
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">THE MISSING SPHERES</div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="directed-by">DIRECTED BY MATTIA F.M</p>
+                <p class="copyright">&copy; 2025 THE MISSING SPHERES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Event Data
+            const events = [
+                {
+                    id: 1,
+                    title: "Press Conference",
+                    date: "July 11, 2025",
+                    time: "10:00 AM - 12:00 PM",
+                    location: "Grand Hotel Roma, Rome",
+                    description: "Join the cast and director of The Missing Spheres for an exclusive press conference. Get insights into the making of the film and hear from the creative minds behind this epic adventure.",
+                    type: "press"
+                },
+                {
+                    id: 2,
+                    title: "Rome Film Festival",
+                    date: "July 15-19, 2025",
+                    time: "Various Times",
+                    location: "Auditorium Parco della Musica, Rome",
+                    description: "The Missing Spheres will be featured at the prestigious Rome Film Festival. Special screenings, panel discussions, and Q&A sessions with the cast and crew will take place throughout the festival.",
+                    type: "festival"
+                },
+                {
+                    id: 3,
+                    title: "Cast Meet & Greet",
+                    date: "July 25, 2025",
+                    time: "3:00 PM - 6:00 PM",
+                    location: "Galleria Vittorio Emanuele II, Milan",
+                    description: "Meet the stars of The Missing Spheres in person! Get autographs, take photos, and chat with the actors who brought your favorite characters to life.",
+                    type: "meet"
+                },
+                {
+                    id: 4,
+                    title: "Milan Premiere",
+                    date: "July 30, 2025",
+                    time: "7:00 PM - 11:00 PM",
+                    location: "Teatro alla Scala, Milan",
+                    description: "Be among the first to experience The Missing Spheres at this exclusive premiere event. Red carpet arrivals begin at 6:00 PM, with the screening starting at 7:30 PM.",
+                    type: "premiere"
+                },
+                {
+                    id: 5,
+                    title: "Official Release",
+                    date: "July 31, 2025",
+                    time: "All Day",
+                    location: "Theaters Nationwide",
+                    description: "The Missing Spheres officially releases in theaters across the country! Check your local theater for showtimes and ticket availability.",
+                    type: "release"
+                }
+            ];
+            
+            // Event Details Modal Functionality
+            const eventDetailsModal = document.getElementById('event-details');
+            const closeEventDetails = document.querySelector('.close-event-details');
+            const eventTitle = document.getElementById('event-title');
+            const eventDate = document.getElementById('event-date');
+            const eventDescription = document.getElementById('event-description');
+            const eventLocation = document.getElementById('event-location');
+            const eventTime = document.getElementById('event-time');
+            const addToCalendarBtn = document.getElementById('add-to-calendar');
+            const shareEventBtn = document.getElementById('share-event');
+            
+            // Show event details when a day with event is clicked
+            const eventDays = document.querySelectorAll('.calendar-day[data-event-id]');
+            
+            eventDays.forEach(day => {
+                day.addEventListener('click', function() {
+                    const eventId = parseInt(this.getAttribute('data-event-id'));
+                    const event = events.find(e => e.id === eventId);
+                    
+                    if (event) {
+                        // Populate event details
+                        eventTitle.textContent = event.title;
+                        eventDate.textContent = event.date;
+                        eventDescription.textContent = event.description;
+                        eventLocation.textContent = event.location;
+                        eventTime.textContent = event.time;
+                        
+                        // Show modal
+                        eventDetailsModal.classList.add('active');
+                    }
+                });
+            });
+            
+            // Close event details modal
+            closeEventDetails.addEventListener('click', function() {
+                eventDetailsModal.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside content
+            eventDetailsModal.addEventListener('click', function(e) {
+                if (e.target === eventDetailsModal) {
+                    eventDetailsModal.classList.remove('active');
+                }
+            });
+            
+            // Add to Calendar functionality
+            addToCalendarBtn.addEventListener('click', function() {
+                alert('Calendar event creation feature coming soon!');
+            });
+            
+            // Share Event functionality
+            shareEventBtn.addEventListener('click', function() {
+                alert('Event sharing feature coming soon!');
+            });
+            
+            // Filter events
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter events
+                    if (filter === 'all') {
+                        // Show all events
+                        eventDays.forEach(day => {
+                            day.style.display = 'flex';
+                        });
+                    } else {
+                        // Show only events of selected type
+                        eventDays.forEach(day => {
+                            const eventId = parseInt(day.getAttribute('data-event-id'));
+                            const event = events.find(e => e.id === eventId);
+                            
+                            if (event && event.type === filter) {
+                                day.style.display = 'flex';
+                            } else {
+                                day.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Calendar Navigation
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+            const todayBtn = document.getElementById('today');
+            const calendarTitle = document.querySelector('.calendar-title');
+            
+            // For demo purposes, just show alerts
+            prevMonthBtn.addEventListener('click', function() {
+                alert('Previous month navigation will be implemented in the final version.');
+            });
+            
+            nextMonthBtn.addEventListener('click', function() {
+                alert('Next month navigation will be implemented in the final version.');
+            });
+            
+            todayBtn.addEventListener('click', function() {
+                alert('Today navigation will be implemented in the final version.');
+            });
+            
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // Hide preloader
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1000);
+            
+            // Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function checkReveal() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = revealElements[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add('active');
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', checkReveal);
+            checkReveal(); // Check on load
+            
+            // Back to Top Button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+        });
+    </script>

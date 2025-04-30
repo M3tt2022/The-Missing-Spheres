@@ -216,42 +216,42 @@
 }
 
 .character-portrait[data-element="all"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_27_57\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Kael.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .character-portrait[data-element="water"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_27_59\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Lyra.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .character-portrait[data-element="fire"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_14\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Zayn.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .character-portrait[data-element="air"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_18\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Nami.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .character-portrait[data-element="earth"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_20\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Gorran.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .character-portrait[data-element="darkness"] {
-    background: url('../FOTO\ PERSONAGGI/ChatGPT\ Image\ Apr\ 15\,\ 2025\,\ 11_29_25\ PM.png');
+    background: url('../FOTO\ PERSONAGGI/Riven.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
